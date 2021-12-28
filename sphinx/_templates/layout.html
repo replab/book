@@ -1,0 +1,17 @@
+{% extends "guzzle_sphinx_theme/layout.html" %}
+{% block breadcrumbs %}
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ol class="breadcrumb">
+    <li><a href="{{ pathto(master_doc) }}">Handbook</a></li>
+    {% for doc in parents %}
+    <li><a href="{{ doc.link|e }}">{{ doc.title }}</a></li>
+    {% endfor %}
+    <li>{{ title }}</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block bottom_rel_links %}
+{% endblock %}
+{% block footer %}
+{% endblock %}

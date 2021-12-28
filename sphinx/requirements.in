@@ -4,8 +4,9 @@ texext
 guzzle_sphinx_theme
 sphinx-togglebutton
 sphinxcontrib-fulltoc
-ablog
 jupyter_client
 octave-kernel
 nbsphinx
 jupytext
+jupyter-sphinx
+myst-nb

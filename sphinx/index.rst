@@ -2,23 +2,47 @@
    :maxdepth: 1
    :hidden:
 
-   nonlocality/index
+   colophon
+   preface
+   intro/index
+   license
 
-Welcome to RepLAB-Quantum!
-==========================
+.. raw:: html
 
-This website showcases various applications of `RepLAB <https://replab.github.io/replab>`_ in the Quantum Information domain. Choose a topic to explore on the left-side menu.
+  <div class='front-page'>
 
+The RepLAB Handbook
+-------------------
 
-Contributors
-------------
+.. raw:: html
 
-These special topic guides on RepLAB were initiated by `Denis Rosset <https://github.com/denisrosset>`_ and
-`Jean-Daniel Bancal <https://github.com/jdbancal>`_.
+  </div>
 
-Feedback and suggestions are always welcome. We ask participants to follow the guidelines of the `Typelevel Code of Conduct <https://typelevel.org/conduct.html>`_.
+.. raw:: html
 
-License
--------
+  <div class='author-name'>Denis Rosset</div>
+  <div class='author-info'>
+  Quantum theory group
+  <br>
+  University of Geneva
+  <br>
+  <a href="physics@denisrosset.com">physics@denisrosset.com</a>
+  </div>
+  <div class='author-name'>Jean-Daniel Bancal</div>
+  <div class='author-info'>
+  Affiliation 1
+  <br>
+  Affiliation 2
+  <br>
+  <a href="TODO">TODO</a>
+  </div>
 
-RepLAB-Quantum is (C) 2018-2021 Denis Rosset, Jean-Daniel Bancal and other collaborators, and licensed under the `Mozilla Public License 2.0 <https://github.com/replab/replab/LICENSE>`_.
+.. raw:: html
+
+  <div class='build-date'>
+
+|today|
+
+.. raw:: html
+
+  </div>

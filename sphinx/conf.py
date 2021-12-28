@@ -39,30 +39,23 @@ release = version
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.autodoc',   # for enumeration of objects stuff
-              'sphinx.ext.autosummary',
-              'sphinx.ext.githubpages',
-              'nbsphinx',
+extensions = ['sphinx.ext.githubpages',
+              'myst_nb',
               'sphinx_togglebutton',
-#              'sphinxcontrib.fulltoc', # for sidebar TOC
               'sphinxcontrib.matlab', # support for Matlab
-              'sphinx.ext.napoleon',  # support for shorthand syntax
               'sphinx.ext.mathjax',   # LaTeX support
               'texext.math_dollar',   # lightweight LaTeX filter
-              'ablog',                # for blogging
               'sphinx.ext.intersphinx'] # for cross-references
 
 import jupytext
 
-nbsphinx_kernel_name = 'octave'
-
-nbsphinx_custom_formats = {
-    '.m': lambda s: jupytext.reads(s, fmt='m:light'),
-}
+nb_merge_streams = True
 
 html_sidebars = {
-    '**': ['logo-text.html', 'globaltoc.html', 'recentposts.html']
+    '**': ['logo-text.html', 'globaltoc.html']
 }
+
+templates_path = ["_templates"]
 
 autodoc_default_options = {'members': True, 'show-inheritance': True}
 autosummary_generate = True
@@ -106,6 +99,8 @@ intersphinx_timeout = 10 # timeout so we don't wait indefinitely if the website 
 
 import guzzle_sphinx_theme
 
+html_show_sourcelink = True
+
 html_theme_path = guzzle_sphinx_theme.html_theme_path()
 html_theme = 'guzzle_sphinx_theme'
 
@@ -117,7 +112,8 @@ html_static_path = ['_static']
 # Guzzle theme options (see theme.conf for more information)
 html_theme_options = {
     # Set the name of the project to appear in the sidebar
-    "project_nav_name": "RepLAB-Quantum"
+    "project_nav_name": "The RepLAB Handbook",
+    "base_url": "https://replab.github.io/book/"
 }
 
 html_css_files = [
@@ -128,8 +124,3 @@ html_css_files = [
 html_js_files = [
     'js/collapse_helper.js',
 ]
-
-# -- Module ablog -----------------------------------------------------------------
-import ablog
-
-templates_path = ['_templates', ablog.get_html_templates_path()]
