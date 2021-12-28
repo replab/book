@@ -1,4 +1,4 @@
-function result = replab_quantum_generate(what)
+function result = build(what)
 % Website generation function
 %
 % This function should not be called before'replab_init' has been called at
@@ -25,9 +25,9 @@ function result = replab_quantum_generate(what)
     if nargin < 1
         what = 'all';
     end
-    
+
     result = true;
-    
+
     % Obtain repository path
     [pathStr, name, extension] = fileparts(which(mfilename));
     pathStr = strrep(pathStr, '\', '/');
@@ -54,7 +54,7 @@ function result = replab_quantum_generate(what)
             replab_generate_sphinxsrc_docpp(sphinxRoot, sphinxPreprocessed, 'https://replab.github.io/replab');
         end
     end
-    
+
     if isequal(what, 'sphinxbuild') || isequal(what, 'sphinx') || isequal(what, 'all')
         sphinxTarget = fullfile(pathStr, 'docs');
         if ~exist(sphinxTarget, 'dir')

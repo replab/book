@@ -1,5 +1,3 @@
-# Contributing to RepLAB
+# Contributing to the RepLAB Handbook
 
-## Commit Message Format
-
-We follow the [Angular conventions](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format).
+See [the contribution guidelines](https://github.com/replab/replab/blob/develop/CONTRIBUTING.md) on the main repository.
