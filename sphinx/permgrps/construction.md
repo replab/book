@@ -81,7 +81,7 @@ S4 = replab.S(4);
 H = S4.subgroup({h1, h2}, 'order', vpi(8));
 ```
 
-## Alternating groups
+## Symmetric groups
 
 We already mentioned the symmetric group, here are two possible calls:
 
@@ -89,6 +89,8 @@ We already mentioned the symmetric group, here are two possible calls:
 S4 = replab.PermutationGroup.symmetric(4);
 S4 = replab.S(4)
 ```
+
+## Alternating groups
 
 The [alternating group](https://groupprops.subwiki.org/wiki/Alternating_group) is available as well, which contains all permutations that can be expressed as a product of an even number of transpositions.
 

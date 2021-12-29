@@ -6,6 +6,7 @@
    preface
    intro/index
    permgrps/index
+   absgrps/index
    bibliography
    license
 

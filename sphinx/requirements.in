@@ -12,3 +12,4 @@ jupytext
 jupyter-sphinx
 myst-nb
 jupyter-cache
+jupyter-cache[cli]
