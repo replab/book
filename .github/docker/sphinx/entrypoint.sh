@@ -15,20 +15,8 @@ git rev-parse HEAD
 ls -al docs
 pip3 install -r sphinx/requirements.txt
 
-# prepare commands
-ADDPATH_COMMAND="path, add_replab_path; path, replab_init('verbose', 2);"
-GENERATE_COMMAND="exit(~replab_quantum_generate('sphinx'));";
-echo "ADDPATH_COMMAND=$ADDPATH_COMMAND";
-echo "GENERATE_COMMAND=$GENERATE_COMMAND";
-
-# Check what octave packages we have installed
-octave -q --eval "ver"
-
-# Check that octave can access java
-octave --eval "b = javaMethod('valueOf', 'java.math.BigInteger', 2)"
-
 # Run commands
-if octave -q --eval "$ADDPATH_COMMAND $GENERATE_COMMAND"; then
+if ./build.sh; then
   # Check where we ended up and what's going on where we are
   pwd
   ls -alh docs
