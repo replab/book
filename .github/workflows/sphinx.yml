@@ -22,7 +22,6 @@ jobs:
       - name: Check out doc repository
         uses: actions/checkout@v2
         with:
-          repository: replab/book
           ref: gh-pages
           path: docs
           persist-credentials: false
