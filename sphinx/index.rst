@@ -7,6 +7,8 @@
    intro/index
    permgrps/index
    absgrps/index
+   matgrps/index
+   reps/index
    bibliography
    license
 

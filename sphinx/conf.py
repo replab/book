@@ -57,7 +57,7 @@ bibtex_bibfiles = ['refs.bib']
 ## sphinx.ext.intersphinx
 ##
 
-intersphinx_mapping = {'api': ('https://replab.github.io/replab', None)}
+intersphinx_mapping = {'api': ('https://replab.github.io/api', None)}
 intersphinx_cache_limit = -1 # always fetch the latest version
 intersphinx_timeout = 10 # timeout so we don't wait indefinitely if the website is unavailable
 
@@ -67,6 +67,7 @@ intersphinx_timeout = 10 # timeout so we don't wait indefinitely if the website 
 
 nb_merge_streams = True
 jupyter_execute_notebooks = "cache"
+execution_timeout = 120
 
 ##
 ## HTML template
