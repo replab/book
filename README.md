@@ -4,7 +4,7 @@ This repository contains the source files for the RepLAB Handbook.
 
 - Go to the [Handbook website](https://replab.github.io/book/) to consult the latest version.
 
-- Clone the repository, run `git submodule update --init --recursive` once. Then run `build.m` each time you want to generate a local copy.
+- Clone the repository, run `git submodule update --init --recursive` once. Then run `build.sh` each time you want to generate a local copy.
 
 ## License
 
