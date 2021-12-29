@@ -11,3 +11,10 @@ Anyhow, we wish you as much pleasure discovering the abilities of this library a
 *Denis Rosset and Jean-Daniel Bancal*
 
 *Geneva, Switzerland, December 2021*
+
+Acknowledgements
+----------------
+
+* We thank Thomas W. Judson for its `Abstract Algebra: Theory and Applications <http://abstract.pugetsound.edu/>`_ textbook, which was a great source of inspiration in writing this handbook.
+
+* We acknowledge financial support from the NCCR SwissMAP.

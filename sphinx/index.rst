@@ -5,6 +5,8 @@
    colophon
    preface
    intro/index
+   permgrps/index
+   bibliography
    license
 
 .. raw:: html

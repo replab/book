@@ -12,12 +12,28 @@ kernelspec:
   name: octave
 ---
 
-# 1. Introduction to RepLAB
+# 1. Introduction
+
+## 1.1 Structure of the book
+
+TODO
+
+How is this book structured?
+
+
+## 1.2 Installing RepLAB
+
+* we assume RepLAB has been installed
+
+* how to initialize
+
+
+
 
 ```{code-cell}
 run ../../external/replab/replab_init.m
 ```
 
-```{code-cell}
+## 1.3 Programming style
 
-```
+## 1.4 Help system

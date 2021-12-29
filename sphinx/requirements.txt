@@ -44,8 +44,10 @@ docutils==0.17.1
     #   myst-nb
     #   myst-parser
     #   nbsphinx
+    #   pybtex-docutils
     #   sphinx
     #   sphinx-togglebutton
+    #   sphinxcontrib-bibtex
     #   texext
 entrypoints==0.3
     # via
@@ -140,6 +142,8 @@ jupyterlab-widgets==1.0.2
     # via ipywidgets
 jupytext==1.13.5
     # via -r requirements.in
+latexcodec==2.0.1
+    # via pybtex
 markdown-it-py==1.1.0
     # via
     #   jupytext
@@ -224,6 +228,12 @@ ptyprocess==0.7.0
     # via
     #   pexpect
     #   terminado
+pybtex-docutils==1.0.1
+    # via sphinxcontrib-bibtex
+pybtex==0.24.0
+    # via
+    #   pybtex-docutils
+    #   sphinxcontrib-bibtex
 pycparser==2.21
     # via cffi
 pygments==2.10.0
@@ -247,6 +257,7 @@ pyyaml==6.0
     #   jupytext
     #   myst-nb
     #   myst-parser
+    #   pybtex
 pyzmq==22.3.0
     # via
     #   jupyter-client
@@ -263,6 +274,8 @@ send2trash==1.8.0
 six==1.16.0
     # via
     #   bleach
+    #   latexcodec
+    #   pybtex
     #   python-dateutil
     #   texext
 smmap==5.0.0
@@ -284,10 +297,13 @@ sphinx==4.3.2
     #   myst-parser
     #   nbsphinx
     #   sphinx-togglebutton
+    #   sphinxcontrib-bibtex
     #   sphinxcontrib-matlabdomain
     #   texext
 sphinxcontrib-applehelp==1.0.2
     # via sphinx
+sphinxcontrib-bibtex==2.4.1
+    # via -r requirements.in
 sphinxcontrib-devhelp==1.0.2
     # via sphinx
 sphinxcontrib-fulltoc==1.2.0

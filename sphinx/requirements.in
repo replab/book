@@ -3,6 +3,7 @@ sphinxcontrib-matlabdomain
 texext
 guzzle_sphinx_theme
 sphinx-togglebutton
+sphinxcontrib-bibtex
 sphinxcontrib-fulltoc
 jupyter_client
 octave-kernel

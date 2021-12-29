@@ -39,13 +39,18 @@ release = version
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.githubpages',
-              'myst_nb',
-              'sphinx_togglebutton',
-              'sphinxcontrib.matlab', # support for Matlab
-              'sphinx.ext.mathjax',   # LaTeX support
-              'texext.math_dollar',   # lightweight LaTeX filter
-              'sphinx.ext.intersphinx'] # for cross-references
+extensions = [
+    'sphinx.ext.githubpages', # creates a .nojekyll file to publish on GitHub
+    'myst_nb',                # support for Myst files
+    'sphinxcontrib.bibtex',   # academic references
+    'sphinx_togglebutton',    # toggle
+    'sphinxcontrib.matlab',   # support for Matlab
+    'sphinx.ext.mathjax',     # LaTeX support
+    'texext.math_dollar',     # lightweight LaTeX filter
+    'sphinx.ext.intersphinx', # cross references
+]
+
+bibtex_bibfiles = ['refs.bib']
 
 import jupytext
 
@@ -91,7 +96,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '**.ipynb_checkpoints', 
 pygments_style = 'sphinx'
 
 # The location of Replab's API documentation, to enable cross-references
-intersphinx_mapping = {'mat': ('https://replab.github.io/replab', None)}
+intersphinx_mapping = {'api': ('https://replab.github.io/replab', None)}
 intersphinx_cache_limit = -1 # always fetch the latest version of https://replab.github.io/replab/objects.inv
 intersphinx_timeout = 10 # timeout so we don't wait indefinitely if the website is unavailable
 

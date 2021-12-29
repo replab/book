@@ -66,6 +66,34 @@
 }
 
 .body {
-    max-width: 800px;
+    max-width: 1000px;
     text-align: justify;
+}
+
+aside.sidebar {
+    padding: 10px !important;
+    margin: 0 0 10px 10px !important;
+    width: 300px !important;
+    float: right;
+    font-size: 0.8em;
+    background-color: aliceblue;
+}
+
+.container.cell {
+    clear: both !important;
+    width: 905px;
+}
+
+.container.cell_input {
+    clear: both !important;
+    width: 905px;
+}
+
+.container.cell_output {
+    clear: both !important;
+    width: 905px;
+}
+
+.document {
+    overflow: auto;
 }
