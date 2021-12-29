@@ -17,3 +17,5 @@ Here are the available topics.
   construction
   properties
   subgroups
+  conj
+  cosets

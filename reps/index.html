@@ -15,7 +15,7 @@
   <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap-theme.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <title>2. Permutation groups &#8212; The RepLAB Handbook</title>
+    <title>5. Representations &#8212; The RepLAB Handbook</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/guzzle.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -28,13 +28,11 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script src="../_static/js/collapse_helper.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.1 Permutations in RepLAB" href="permutations.html" />
-    <link rel="prev" title="1. Introduction" href="../intro/index.html" />
+    <link rel="next" title="Bibliography" href="../bibliography.html" />
+    <link rel="prev" title="4. Matrix and continuous groups" href="../matgrps/index.html" />
   
    
 
@@ -46,13 +44,13 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="permutations.html" title="2.1 Permutations in RepLAB"
+          <a href="../bibliography.html" title="Bibliography"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../intro/index.html" title="1. Introduction"
+          <a href="../matgrps/index.html" title="4. Matrix and continuous groups"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">The RepLAB Handbook</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">2. Permutation groups</a></li> 
+        <li class="nav-item nav-item-this"><a href="">5. Representations</a></li> 
       </ul>
     </div>
     <div class="container-wrapper">
@@ -83,18 +81,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../colophon.html">Colophon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro/index.html">1. Introduction</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Permutation groups</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="permutations.html">2.1 Permutations in RepLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="construction.html">2.2 Groups from scratch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="properties.html">2.3 Computing group properties</a></li>
-<li class="toctree-l2"><a class="reference internal" href="subgroups.html">2.4 Subgroups</a></li>
-<li class="toctree-l2"><a class="reference internal" href="conj.html">(2.5 Conjugacy classes)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cosets.html">(2.6 Cosets)</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../permgrps/index.html">2. Permutation groups</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../absgrps/index.html">3. Abstract groups</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../matgrps/index.html">4. Matrix and continuous groups</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../reps/index.html">5. Representations</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Representations</a><ul class="simple">
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../license.html">A. GNU Free Documentation License</a></li>
 </ul>
@@ -111,31 +103,16 @@
   <ol class="breadcrumb">
     <li><a href="../index.html">Handbook</a></li>
     
-    <li>2. Permutation groups</li>
+    <li>5. Representations</li>
   </ol>
 </div>
 
           <div class="document clearer body">
             
-  <section id="permutation-groups">
-<h1>2. Permutation groups<a class="headerlink" href="#permutation-groups" title="Permalink to this headline">¶</a></h1>
-<p>The permutations of a finite set <span class="math notranslate nohighlight">\(X\)</span> are the first symmetries we will describe.
-Because <span class="math notranslate nohighlight">\(X\)</span> is finite, we can assume <span class="math notranslate nohighlight">\(X = \{1,2,\ldots,n\}\)</span>, and we write <span class="math notranslate nohighlight">\(S_n\)</span> the set of all its permutations, and they form a group:</p>
-<ul class="simple">
-<li><p>The identity permutation sends <span class="math notranslate nohighlight">\(1\)</span> to <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(2\)</span> to <span class="math notranslate nohighlight">\(2\)</span>, … and <span class="math notranslate nohighlight">\(n\)</span> to <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
-<li><p>Permutations compose, and this composition is associative.</p></li>
-<li><p>The inverse permutation exists.</p></li>
-</ul>
-<p>Here are the available topics.</p>
+  <section id="representations">
+<h1>5. Representations<a class="headerlink" href="#representations" title="Permalink to this headline">¶</a></h1>
+<p>The representation of a group…</p>
 <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="permutations.html">2.1 Permutations in RepLAB</a></li>
-<li class="toctree-l1"><a class="reference internal" href="construction.html">2.2 Groups from scratch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="properties.html">2.3 Computing group properties</a></li>
-<li class="toctree-l1"><a class="reference internal" href="subgroups.html">2.4 Subgroups</a></li>
-<li class="toctree-l1"><a class="reference internal" href="conj.html">(2.5 Conjugacy classes)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cosets.html">(2.6 Cosets)</a></li>
-</ul>
 </div>
 </section>
 
@@ -152,13 +129,13 @@ Because <span class="math notranslate nohighlight">\(X\)</span> is finite, we ca
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="permutations.html" title="2.1 Permutations in RepLAB"
+          <a href="../bibliography.html" title="Bibliography"
              >next</a> |</li>
         <li class="right" >
-          <a href="../intro/index.html" title="1. Introduction"
+          <a href="../matgrps/index.html" title="4. Matrix and continuous groups"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">The RepLAB Handbook</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">2. Permutation groups</a></li> 
+        <li class="nav-item nav-item-this"><a href="">5. Representations</a></li> 
       </ul>
     </div>
 

@@ -89,9 +89,13 @@
 <li class="toctree-l2"><a class="reference internal" href="construction.html">2.2 Groups from scratch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="properties.html">2.3 Computing group properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="subgroups.html">2.4 Subgroups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conj.html">(2.5 Conjugacy classes)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cosets.html">(2.6 Cosets)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../absgrps/index.html">3. Abstract groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matgrps/index.html">4. Matrix and continuous groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reps/index.html">5. Representations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../license.html">A. GNU Free Documentation License</a></li>
 </ul>
@@ -173,10 +177,10 @@ k2 = 1
 One should then be careful when mixing different textbooks or computer algebra systems.</p>
 </aside>
 <p>But how does one compute the inverse? Luckily, we can construct the group of all permutations of a given size
-in RepLAB, and call the methods that represent group operations. The function <a class="reference external" href="https://replab.github.io/replab/api/named_discrete_groups.html#+replab.S" title="(in RepLAB v1.0.0)"><span class="xref myst">replab.S(n)</span></a> creates the
-symmetric group acting on <span class="math notranslate nohighlight">\(\{1,2,\ldots,n\}\)</span>. The returned object is of type <a class="reference external" href="https://replab.github.io/replab/api/permutation_groups.html#+replab.PermutationGroup" title="(in RepLAB v1.0.0)"><span class="xref myst">replab.PermutationGroup</span></a>
-and it proposes notably <a class="reference external" href="https://replab.github.io/replab/api/permutation_groups.html#+replab.PermutationGroup.identity" title="(in RepLAB v1.0.0)"><span class="xref myst">identity</span></a>, <a class="reference external" href="https://replab.github.io/replab/api/permutation_groups.html#+replab.PermutationGroup.compose" title="(in RepLAB v1.0.0)"><span class="xref myst">compose</span></a> and
-<a class="reference external" href="https://replab.github.io/replab/api/permutation_groups.html#+replab.PermutationGroup.inverse" title="(in RepLAB v1.0.0)"><span class="xref myst">inverse</span></a>:</p>
+in RepLAB, and call the methods that represent group operations. The function <a class="reference external" href="https://replab.github.io/api/named_discrete_groups.html#+replab.S" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">replab.S(n)</span></a> creates the
+symmetric group acting on <span class="math notranslate nohighlight">\(\{1,2,\ldots,n\}\)</span>. The returned object is of type <a class="reference external" href="https://replab.github.io/api/permutation_groups.html#+replab.PermutationGroup" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">replab.PermutationGroup</span></a>
+and it proposes notably <a class="reference external" href="https://replab.github.io/api/permutation_groups.html#+replab.PermutationGroup.identity" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">identity</span></a>, <a class="reference external" href="https://replab.github.io/api/permutation_groups.html#+replab.PermutationGroup.compose" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">compose</span></a> and
+<a class="reference external" href="https://replab.github.io/api/permutation_groups.html#+replab.PermutationGroup.inverse" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">inverse</span></a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">S</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>

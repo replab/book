@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  
+  <!-- Licensed under the Apache 2.0 License -->
+  <link rel="stylesheet" type="text/css" href="../_static/fonts/open-sans/stylesheet.css" />
+  <!-- Licensed under the SIL Open Font License -->
+  <link rel="stylesheet" type="text/css" href="../_static/fonts/source-serif-pro/source-serif-pro.css" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap-theme.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>4. Matrix and continuous groups &#8212; The RepLAB Handbook</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/guzzle.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../_static/js/collapse_helper.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5. Representations" href="../reps/index.html" />
+    <link rel="prev" title="3. Abstract groups" href="../absgrps/index.html" />
+  
+   
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../reps/index.html" title="5. Representations"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../absgrps/index.html" title="3. Abstract groups"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">The RepLAB Handbook</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">4. Matrix and continuous groups</a></li> 
+      </ul>
+    </div>
+    <div class="container-wrapper">
+
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+  <div id="left-column">
+    <div class="sphinxsidebar"><div class="text-logo">
+  <a href="
+    ../index.html">The RepLAB Handbook</a>&nbsp;&nbsp;
+  <a href="https://github.com/replab/book"><i class="fab fa-github"></i></a>&nbsp;
+  <br>
+  <a class="website-part" href="https://replab.github.io"><img src="../_static/img/logo48.png" width="24" height="24" /></a>
+  &nbsp;
+  <a class="website-current" href="https://replab.github.io/book">Book</a>
+  &nbsp;
+  <a class="website-part" href="https://replab.github.io/apps">Apps</a>
+  &nbsp;
+  <a class="website-part" href="https://replab.github.io/api">API</a>
+  &nbsp;
+  <a class="website-part" href="https://replab.github.io/blog">Blog</a>
+</div><div class="sidebar-block">
+  <div class="sidebar-toc">
+    
+    
+      <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../colophon.html">Colophon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../permgrps/index.html">2. Permutation groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../absgrps/index.html">3. Abstract groups</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Matrix and continuous groups</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#finite-exact-matrix-groups">Finite, exact, matrix groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#continuous-groups">Continuous groups</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reps/index.html">5. Representations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">A. GNU Free Documentation License</a></li>
+</ul>
+
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+        <div id="right-column">
+          
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ol class="breadcrumb">
+    <li><a href="../index.html">Handbook</a></li>
+    
+    <li>4. Matrix and continuous groups</li>
+  </ol>
+</div>
+
+          <div class="document clearer body">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="matrix-and-continuous-groups">
+<h1>4. Matrix and continuous groups<a class="headerlink" href="#matrix-and-continuous-groups" title="Permalink to this headline">¶</a></h1>
+<aside class="sidebar">
+<p>RepLAB’s algorithms <span id="id1">[<a class="reference internal" href="../bibliography.html#id3" title="Denis Rosset, Felipe Montealegre-Mora, and Jean-Daniel Bancal. RepLAB: A Computational/Numerical Approach to Representation Theory. In M. B. Paranjape, Richard MacKenzie, Zora Thomova, Pavel Winternitz, and William Witczak-Krempa, editors, Quantum Theory and Symmetries, CRM Series in Mathematical Physics, 643–653. Cham, 2021. Springer International Publishing. doi:10.1007/978-3-030-55777-5_60.">RMontealegreMoraB21</a>]</span> handle any compact group, given an oracle that samples from the Haar measure.
+One then simply subclasses <a class="reference external" href="https://replab.github.io/api/groups.html#+replab.CompactGroup" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">CompactGroup</span></a>.
+However, it is easier to work with the primitives RepLAB already provides.</p>
+</aside>
+<p>We now move to symmetries of the Euclidean space, including continuous symmetries.
+RepLAB provide two matrix group types.</p>
+<ul class="simple">
+<li><p>Finite matrix groups are described by <a class="reference external" href="https://replab.github.io/api/finite_groups.html#+replab.MatrixGroup" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">MatrixGroup</span></a>, and their coefficients must necessarily
+be taken from the <a class="reference external" href="https://en.wikipedia.org/wiki/Cyclotomic_field">field of cyclotomics</a>. Their elements are
+cyclotomic matrices of type <a class="reference external" href="https://replab.github.io/api/numerics.html#+replab.cyclotomic" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">cyclotomic</span></a>. RepLAB provides an implementation of exact arithmetic
+in the field of cyclotomics using a Java library.</p></li>
+<li><p>Classical compact Lie groups are provided by <a class="reference external" href="https://replab.github.io/api/continuous_groups.html#+replab.ClassicalCompactGroup" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">ClassicalCompactGroup</span></a>. Their elements
+are matrices with floating-point coefficients, and thus all the operations on those group elements are approximate.</p></li>
+</ul>
+<section id="finite-exact-matrix-groups">
+<h2>Finite, exact, matrix groups<a class="headerlink" href="#finite-exact-matrix-groups" title="Permalink to this headline">¶</a></h2>
+<p>Here, we define a finite matrix group with two generators. The first one is a permutation matrix, and can thus be
+represented exactly using floating-point numbers (i.e, the standard MATLAB/Octave notation).
+The second, however, cannot, and we need to construct an exact <a class="reference external" href="https://replab.github.io/api/numerics.html#+replab.cyclotomic" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">cyclotomic</span></a> matrix. Note that
+the argument to <a class="reference external" href="https://replab.github.io/api/numerics.html#+replab.cyclotomic" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">cyclotomic</span></a> is given as a string, and it will be parsed inside RepLAB.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">M1</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">1</span><span class="p">;</span> <span class="mi">1</span> <span class="mi">0</span><span class="p">];</span>
+<span class="n">M2</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">cyclotomic</span><span class="p">(</span><span class="s">&#39;[1/sqrt(2), 1/sqrt(2); 1/sqrt(2), -1/sqrt(2)]&#39;</span><span class="p">);</span>
+<span class="n">G</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">MatrixGroup</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">{</span><span class="n">M1</span><span class="p">,</span> <span class="n">M2</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>G =
+
+Finite group of order 16
+            identity: [1, 0; 0, 1]
+generator(1 or &#39;x1&#39;): [0, 1; 1, 0]
+generator(2 or &#39;x2&#39;): [sqrt(2)/2, sqrt(2)/2; sqrt(2)/2, -sqrt(2)/2]
+    recognize.source: Dihedral group of order 16
+</pre></div>
+</div>
+</div>
+</div>
+<p>One can use most of the methods already discussed for <span class="xref myst">permutation groups</span> on matrix groups.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">M3</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">cyclotomic</span><span class="p">(</span><span class="s">&#39;[i, 0; 0, 1]&#39;</span><span class="p">);</span>
+<span class="n">H</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">MatrixGroup</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">{</span><span class="n">M3</span><span class="p">});</span>
+<span class="n">G_inter_H</span> <span class="p">=</span> <span class="n">G</span><span class="p">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>G_inter_H =
+
+Finite group of order 2
+            identity: [1, 0; 0, 1]
+generator(1 or &#39;x1&#39;): [-1, 0; 0, 1]
+    recognize.source: Cyclic group C(2) of order 2 &lt; x | x^2 = 1 &gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finite, exact, matrix groups are provided for convenience and pedagogical purposes. As of December 2021, they are
+implemented using brute-force enumeration algorithm, and are limited to group orders in the low hundreds.</p>
+</section>
+<section id="continuous-groups">
+<h2>Continuous groups<a class="headerlink" href="#continuous-groups" title="Permalink to this headline">¶</a></h2>
+<p>The following continuous groups are available in RepLAB.</p>
+<ul class="simple">
+<li><p>Over real <span class="math notranslate nohighlight">\(n \times n\)</span> matrices, the orthogonal group <a class="reference external" href="https://replab.github.io/api/continuous_groups.html#+replab.O" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">O(n)</span></a> and the special orthogonal <a class="reference external" href="https://replab.github.io/api/continuous_groups.html#+replab.SO" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">SO(n)</span></a> group.</p></li>
+<li><p>Over complex <span class="math notranslate nohighlight">\(n \times n\)</span> matrices, the unitary group <a class="reference external" href="https://replab.github.io/api/continuous_groups.html#+replab.U" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">U(n)</span></a> and the special unitary <a class="reference external" href="https://replab.github.io/api/continuous_groups.html#+replab.SU" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">SU(n)</span></a> group.</p></li>
+<li><p>Over quaternionic <span class="math notranslate nohighlight">\(n \times n\)</span> matrices, the compact symplectic group <a class="reference external" href="https://replab.github.io/api/continuous_groups.html#+replab.Sp" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">Sp(n)</span></a>. Its elements are quaternionic matrices
+of type <a class="reference external" href="https://replab.github.io/api/numerics.html#+replab.H" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">replab.H</span></a>. But usually, one works with an encoding of its elements over the complex numbers.</p></li>
+</ul>
+<p>By themselves, those groups provide one useful operation: sampling from their Haar measure.</p>
+<p>For the (special) orthogonal group:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">O3</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">O</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">sample_O3</span> <span class="p">=</span> <span class="n">O3</span><span class="p">.</span><span class="n">sample</span>
+<span class="n">SO3</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">SO</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">sample_SO3</span> <span class="p">=</span> <span class="n">SO3</span><span class="p">.</span><span class="n">sample</span>
+<span class="n">det_SO3</span> <span class="p">=</span> <span class="nb">det</span><span class="p">(</span><span class="n">sample_SO3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sample_O3 =
+
+   0.7579  -0.5274   0.3840
+  -0.3461  -0.8240  -0.4486
+  -0.5530  -0.2071   0.8070
+
+sample_SO3 =
+
+   9.7240e-01  -8.8662e-03   2.3317e-01
+   1.6247e-01  -6.9152e-01  -7.0385e-01
+   1.6748e-01   7.2230e-01  -6.7099e-01
+
+det_SO3 = 1
+</pre></div>
+</div>
+</div>
+</div>
+<p>For the (special) unitary group:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">U2</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">U</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">sample_U2</span> <span class="p">=</span> <span class="n">U2</span><span class="p">.</span><span class="n">sample</span>
+<span class="n">SU2</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">SU</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">sample_SU2</span> <span class="p">=</span> <span class="n">SU2</span><span class="p">.</span><span class="n">sample</span>
+<span class="n">det_U2</span> <span class="p">=</span> <span class="nb">det</span><span class="p">(</span><span class="n">sample_U2</span><span class="p">)</span>
+<span class="n">det_SU2</span> <span class="p">=</span> <span class="nb">det</span><span class="p">(</span><span class="n">sample_SU2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sample_U2 =
+
+   0.2525 - 0.0133i   0.6792 + 0.6890i
+  -0.3377 + 0.9067i   0.2358 - 0.0913i
+
+sample_SU2 =
+
+  -0.5042 - 0.3506i   0.5099 + 0.6025i
+  -0.5099 + 0.6025i  -0.5042 + 0.3506i
+
+det_U2 =  0.9124 - 0.4094i
+det_SU2 =  1.0000e+00 + 1.6653e-16i
+</pre></div>
+</div>
+</div>
+</div>
+<p>For the compact symplectic group:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">Sp2</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">Sp</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">sample_Sp2</span> <span class="p">=</span> <span class="n">Sp2</span><span class="p">.</span><span class="n">sample</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sample_Sp2 =
+
+  0.030643 - 0.087387i + 0.40096j ...  -0.42426 - 0.37144i + 0.026905j ...  
+  0.023494 - 0.0044464i + 0.64602j...  0.30953 - 0.064721i + 0.163j + 0...  
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will find more applications of continuous groups when we study group representations.</p>
+</section>
+</section>
+
+
+          </div>
+
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../reps/index.html" title="5. Representations"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../absgrps/index.html" title="3. Abstract groups"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">The RepLAB Handbook</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">4. Matrix and continuous groups</a></li> 
+      </ul>
+    </div>
+
+  </body>
+</html>
