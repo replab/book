@@ -1,4 +1,8 @@
 {% extends "guzzle_sphinx_theme/layout.html" %}
+
+{# Change the root path element name in the breadcrumbs #}
+{# Change "Handbook" to whatever #}
+
 {% block breadcrumbs %}
 <div role="navigation" aria-label="breadcrumbs navigation">
   <ol class="breadcrumb">
@@ -11,7 +15,10 @@
 </div>
 {% endblock %}
 
+{# Remove the previous and next section buttons on the bottom of the page #}
 {% block bottom_rel_links %}
 {% endblock %}
+
+{# Remove the copyright footer #}
 {% block footer %}
 {% endblock %}
