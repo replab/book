@@ -13,3 +13,4 @@ Because $X$ is finite, we can assume $X = \{1,2,\ldots,n\}$, and we write $S_n$ 
 
   permutations
   construction
+  properties

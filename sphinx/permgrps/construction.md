@@ -39,7 +39,7 @@ H = replab.PermutationGroup.of(h1, h2)
 This method allows us to name the generators as well (otherwise, they are given the default names `x1` and `x2`):
 
 ```{code-cell}
-H = replab.PermutationGroup.of('h1', h1, 'h2', h2);
+H = replab.PermutationGroup.of('h1', h1, 'h2', h2)
 ```
 
 ## By calling the `PermutationGroup` constructor
@@ -57,7 +57,7 @@ An interesting optional keyword argument is `order`. If the group order is known
 H = replab.PermutationGroup(4, {h1, h2}, 'order', vpi(8));
 ```
 
-This option is interesting mostly for big groups; thus we write the group order using the [vpi](https://www.mathworks.com/matlabcentral/fileexchange/22725-variable-precision-integer-arithmetic) library, which is included by default with RepLAB.
+This option is interesting mostly for big groups; thus we write the group order using the [vpi](https://www.mathworks.com/matlabcentral/fileexchange/22725-variable-precision-integer-arithmetic) library, which is included by default with RepLAB-- using the default MATLAB/Octave number type would cause problems above $2^53$, as it has finite precision.
 
 ## As subgroups of the symmetric group
 
