@@ -1,0 +1,103 @@
+#left-column {
+    width: 350px;
+}
+
+#right-column {
+    margin-left: 350px;
+    max-width: none;
+}
+
+@media screen and (max-width: 768px) {
+  #right-column {
+    width: 100%;
+    margin-left: 0;
+  }
+  #left-column {
+    width: 100%;
+  }
+}
+
+.text-logo > a {
+  color: #fff;
+}
+
+.responsive img {
+    max-width: 100%;
+    height: auto;
+}
+
+.math .mi {
+    color: #000;
+}
+
+.math .mo {
+    color: #000;
+}
+
+.front-page h1 {
+    text-align: center;
+    font-family: "PT Serif", "Times New Roman", Times, serif;
+    font-weight: 700;
+    border-bottom: 0px;
+}
+
+.author-name {
+    margin-top: 1em;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.author-info {
+    text-align: center;
+    color: #777;
+}
+
+.build-date {
+    margin-top: 1em;
+    text-align: center;
+}
+
+.website-part {
+    font-weight: normal;
+}
+
+.website-part-current {
+    font-weight: bold;
+}
+
+.body {
+    max-width: 1000px;
+    text-align: justify;
+}
+
+aside.sidebar {
+    padding: 10px !important;
+    margin: 0 0 10px 10px !important;
+    width: 300px !important;
+    float: right;
+    font-size: 0.8em;
+    background-color: aliceblue;
+}
+
+.container.cell {
+    clear: both !important;
+    width: 905px;
+}
+
+.container.cell_input {
+    clear: both !important;
+    width: 905px;
+}
+
+.container.cell_output {
+    clear: both !important;
+    width: 905px;
+}
+
+.document {
+    overflow: auto;
+}
+
+.citation .label {
+    background-color: rgb(51, 122, 183) !important;
+}

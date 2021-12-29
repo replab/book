@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <!-- Licensed under the Apache 2.0 License -->
   <link rel="stylesheet" type="text/css" href="_static/fonts/open-sans/stylesheet.css" />
@@ -15,13 +14,14 @@
   <link rel="stylesheet" type="text/css" href="_static/css/bootstrap-theme.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <title>The RepLAB Handbook &#8212; The RepLAB Handbook</title>
+    <title>Search &#8212; The RepLAB Handbook</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/guzzle.css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
@@ -29,11 +29,15 @@
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/js/collapse_helper.js"></script>
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Colophon" href="colophon.html" />
+    <link rel="search" title="Search" href="#" />
+  <script src="searchindex.js" defer></script>
+  
   
    
+
 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -42,11 +46,8 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="colophon.html" title="Colophon"
-             accesskey="N">next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">The RepLAB Handbook</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">The RepLAB Handbook</a></li> 
+        <li class="nav-item nav-item-0"><a href="index.html">The RepLAB Handbook</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Search</a></li> 
       </ul>
     </div>
     <div class="container-wrapper">
@@ -57,7 +58,7 @@
   <div id="left-column">
     <div class="sphinxsidebar"><div class="text-logo">
   <a href="
-    #">The RepLAB Handbook</a>&nbsp;&nbsp;
+    index.html">The RepLAB Handbook</a>&nbsp;&nbsp;
   <a href="https://github.com/replab/book"><i class="fab fa-github"></i></a>&nbsp;
   <br>
   <a class="website-part" href="https://replab.github.io"><img src="_static/img/logo48.png" width="24" height="24" /></a>
@@ -92,36 +93,45 @@
           
 <div role="navigation" aria-label="breadcrumbs navigation">
   <ol class="breadcrumb">
-    <li><a href="#">Handbook</a></li>
+    <li><a href="index.html">Handbook</a></li>
     
-    <li>The RepLAB Handbook</li>
+    <li>Search</li>
   </ol>
 </div>
 
           <div class="document clearer body">
             
-  <div class="toctree-wrapper compound">
-</div>
-<div class='front-page'><section id="the-replab-handbook">
-<h1>The RepLAB Handbook<a class="headerlink" href="#the-replab-handbook" title="Permalink to this headline">¶</a></h1>
-</div><div class='author-name'>Denis Rosset</div>
-<div class='author-info'>
-Quantum theory group
-<br>
-University of Geneva
-<br>
-<a href="physics@denisrosset.com">physics@denisrosset.com</a>
-</div>
-<div class='author-name'>Jean-Daniel Bancal</div>
-<div class='author-info'>
-Affiliation 1
-<br>
-Affiliation 2
-<br>
-<a href="TODO">TODO</a>
-</div><div class='build-date'><p>Dec 29, 2021</p>
-</div></section>
+  <h1 id="search-documentation">Search</h1>
+  <div id="fallback" class="admonition warning">
+  <script type="text/javascript">$('#fallback').hide();</script>
+  <p>
+    Please activate JavaScript to enable the search
+    functionality.
+  </p>
+  </div>
+  <p>
+    From here you can search these documents. Enter your search
+    words into the box below and click "search". Note that the search
+    function will automatically search for all of the words. Pages
+    containing fewer words won't appear in the result list.
+  </p>
 
+  <div class="search-page-form">
+    <form class="form-inline" action="#" method="GET" role="form">
+      <div class="input-group">
+        <input name="q" type="text" class="form-control" />
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">search</button>
+        </span>
+      </div>
+      <span id="search-progress" style="padding-left: 10px"></span>
+    </form>
+  </div>
+
+  
+  <div id="search-results">
+  
+  </div>
 
           </div>
 
@@ -134,11 +144,8 @@ Affiliation 2
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="colophon.html" title="Colophon"
-             >next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">The RepLAB Handbook</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">The RepLAB Handbook</a></li> 
+        <li class="nav-item nav-item-0"><a href="index.html">The RepLAB Handbook</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Search</a></li> 
       </ul>
     </div>
 

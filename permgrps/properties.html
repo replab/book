@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  
+  <!-- Licensed under the Apache 2.0 License -->
+  <link rel="stylesheet" type="text/css" href="../_static/fonts/open-sans/stylesheet.css" />
+  <!-- Licensed under the SIL Open Font License -->
+  <link rel="stylesheet" type="text/css" href="../_static/fonts/source-serif-pro/source-serif-pro.css" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap-theme.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>2.3 Computing group properties &#8212; The RepLAB Handbook</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/guzzle.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/js/collapse_helper.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Bibliography" href="../bibliography.html" />
+    <link rel="prev" title="2.2 Constructing permutation groups" href="construction.html" />
+  
+   
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../bibliography.html" title="Bibliography"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="construction.html" title="2.2 Constructing permutation groups"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">The RepLAB Handbook</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">2. Permutation groups</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">2.3 Computing group properties</a></li> 
+      </ul>
+    </div>
+    <div class="container-wrapper">
+
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+  <div id="left-column">
+    <div class="sphinxsidebar"><div class="text-logo">
+  <a href="
+    ../index.html">The RepLAB Handbook</a>&nbsp;&nbsp;
+  <a href="https://github.com/replab/book"><i class="fab fa-github"></i></a>&nbsp;
+  <br>
+  <a class="website-part" href="https://replab.github.io"><img src="../_static/img/logo48.png" width="24" height="24" /></a>
+  &nbsp;
+  <a class="website-current" href="https://replab.github.io/book">Book</a>
+  &nbsp;
+  <a class="website-part" href="https://replab.github.io/apps">Apps</a>
+  &nbsp;
+  <a class="website-part" href="https://replab.github.io/api">API</a>
+  &nbsp;
+  <a class="website-part" href="https://replab.github.io/blog">Blog</a>
+</div><div class="sidebar-block">
+  <div class="sidebar-toc">
+    
+    
+      <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../colophon.html">Colophon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">1. Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">2. Permutation groups</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="permutations.html">2.1 Permutations in RepLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="construction.html">2.2 Constructing permutation groups</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.3 Computing group properties</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#group-order">Group order</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">A. GNU Free Documentation License</a></li>
+</ul>
+
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+        <div id="right-column">
+          
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ol class="breadcrumb">
+    <li><a href="../index.html">Handbook</a></li>
+    
+    <li><a href="index.html">2. Permutation groups</a></li>
+    
+    <li>2.3 Computing group properties</li>
+  </ol>
+</div>
+
+          <div class="document clearer body">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="computing-group-properties">
+<h1>2.3 Computing group properties<a class="headerlink" href="#computing-group-properties" title="Permalink to this headline">¶</a></h1>
+<p>Let us construct a few example groups.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">h1</span> <span class="p">=</span> <span class="p">[</span><span class="mi">2</span> <span class="mi">1</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">];</span>
+<span class="n">h2</span> <span class="p">=</span> <span class="p">[</span><span class="mi">3</span> <span class="mi">4</span> <span class="mi">1</span> <span class="mi">2</span><span class="p">];</span>
+<span class="n">D8</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">PermutationGroup</span><span class="p">.</span><span class="n">of</span><span class="p">(</span><span class="n">h1</span><span class="p">,</span> <span class="n">h2</span><span class="p">);</span>
+<span class="n">H</span><span class="p">.</span><span class="n">order</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>error: &#39;H&#39; undefined near line 1, column 1
+</pre></div>
+</div>
+</div>
+</div>
+<section id="group-order">
+<h2>Group order<a class="headerlink" href="#group-order" title="Permalink to this headline">¶</a></h2>
+<p>We already</p>
+</section>
+</section>
+
+
+          </div>
+
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../bibliography.html" title="Bibliography"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="construction.html" title="2.2 Constructing permutation groups"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">The RepLAB Handbook</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >2. Permutation groups</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">2.3 Computing group properties</a></li> 
+      </ul>
+    </div>
+
+  </body>
+</html>
