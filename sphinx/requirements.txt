@@ -109,7 +109,9 @@ jinja2==3.0.3
 jsonschema==4.3.2
     # via nbformat
 jupyter-cache==0.4.3
-    # via myst-nb
+    # via
+    #   -r requirements.in
+    #   myst-nb
 jupyter-client==7.1.0
     # via
     #   -r requirements.in
