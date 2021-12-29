@@ -15,7 +15,7 @@ kernelspec:
 :tags: [remove-cell]
 run ../../external/replab/replab_init.m
 ```
-# 2.2 Constructing permutation groups
+# 2.2 Groups from scratch
 
 The easiest way is the first one listed below. The others are given for completeness.
 
@@ -79,4 +79,38 @@ The `order` option is also available.
 ```{code-cell}
 S4 = replab.S(4);
 H = S4.subgroup({h1, h2}, 'order', vpi(8));
+```
+
+## Alternating groups
+
+We already mentioned the symmetric group, here are two possible calls:
+
+```{code-cell}
+S4 = replab.PermutationGroup.symmetric(4);
+S4 = replab.S(4)
+```
+
+The [alternating group](https://groupprops.subwiki.org/wiki/Alternating_group) is available as well, which contains all permutations that can be expressed as a product of an even number of transpositions.
+
+```{code-cell}
+A4 = replab.PermutationGroup.alternating(4);
+A4 = replab.A(4)
+```
+
+## Dihedral groups
+
+A [dihedral group](https://groupprops.subwiki.org/wiki/Dihedral_group) is the symmetry group of a regular polygon.
+
+```{code-cell}
+D4 = replab.PermutationGroup.dihedral(4);
+D4 = replab.D(4)
+```
+
+## Cyclic groups
+
+The [cyclic group](https://groupprops.subwiki.org/wiki/Finite_cyclic_group) $C_n$ is isomorphic to the group of integers modulo $n$.
+
+```{code-cell}
+C4 = replab.PermutationGroup.cyclic(4);
+C4 = replab.C(4)
 ```

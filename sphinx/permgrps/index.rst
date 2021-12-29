@@ -8,9 +8,12 @@ Because $X$ is finite, we can assume $X = \{1,2,\ldots,n\}$, and we write $S_n$ 
 * Permutations compose, and this composition is associative.
 * The inverse permutation exists.
 
+Here are the available topics.
+
 .. toctree::
   :maxdepth: 1
 
   permutations
   construction
   properties
+  subgroups
