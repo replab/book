@@ -61,6 +61,10 @@
     font-weight: normal;
 }
 
+.website-part-current {
+    font-weight: bold;
+}
+
 .body {
     max-width: 800px;
     text-align: justify;
