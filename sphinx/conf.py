@@ -56,6 +56,8 @@ import jupytext
 
 nb_merge_streams = True
 
+jupyter_execute_notebooks = "cache"
+
 html_sidebars = {
     '**': ['logo-text.html', 'globaltoc.html']
 }
