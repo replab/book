@@ -17,6 +17,7 @@ author = 'Denis Rosset, Jean-Daniel Bancal and collaborators'
 version = Path('../version.txt').read_text().strip()
 release = version
 html_title = 'The RepLAB Handbook'
+html_base_url = 'https://replab.github.io/book/'
 
 ##
 ## Extensions
@@ -57,7 +58,7 @@ bibtex_bibfiles = ['refs.bib']
 ##
 
 intersphinx_mapping = {'api': ('https://replab.github.io/replab', None)}
-intersphinx_cache_limit = -1 # always fetch the latest version of https://replab.github.io/replab/objects.inv
+intersphinx_cache_limit = -1 # always fetch the latest version
 intersphinx_timeout = 10 # timeout so we don't wait indefinitely if the website is unavailable
 
 ##
@@ -86,8 +87,8 @@ html_static_path = ['_static']
 # Guzzle theme options (see theme.conf for more information)
 html_theme_options = {
     # Set the name of the project to appear in the sidebar
-    "project_nav_name": "The RepLAB Handbook",
-    "base_url": "https://replab.github.io/book/"
+    "project_nav_name": html_title,
+    "base_url": html_base_url
 }
 
 html_css_files = [
