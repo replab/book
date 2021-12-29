@@ -1,0 +1,395 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  
+  <!-- Licensed under the Apache 2.0 License -->
+  <link rel="stylesheet" type="text/css" href="../_static/fonts/open-sans/stylesheet.css" />
+  <!-- Licensed under the SIL Open Font License -->
+  <link rel="stylesheet" type="text/css" href="../_static/fonts/source-serif-pro/source-serif-pro.css" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap-theme.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>2.4 Subgroups &#8212; The RepLAB Handbook</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/guzzle.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../_static/js/collapse_helper.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Abstract groups" href="../absgrps/index.html" />
+    <link rel="prev" title="2.3 Computing group properties" href="properties.html" />
+  
+   
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../absgrps/index.html" title="3. Abstract groups"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="properties.html" title="2.3 Computing group properties"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">The RepLAB Handbook</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">2. Permutation groups</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">2.4 Subgroups</a></li> 
+      </ul>
+    </div>
+    <div class="container-wrapper">
+
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+  <div id="left-column">
+    <div class="sphinxsidebar"><div class="text-logo">
+  <a href="
+    ../index.html">The RepLAB Handbook</a>&nbsp;&nbsp;
+  <a href="https://github.com/replab/book"><i class="fab fa-github"></i></a>&nbsp;
+  <br>
+  <a class="website-part" href="https://replab.github.io"><img src="../_static/img/logo48.png" width="24" height="24" /></a>
+  &nbsp;
+  <a class="website-current" href="https://replab.github.io/book">Book</a>
+  &nbsp;
+  <a class="website-part" href="https://replab.github.io/apps">Apps</a>
+  &nbsp;
+  <a class="website-part" href="https://replab.github.io/api">API</a>
+  &nbsp;
+  <a class="website-part" href="https://replab.github.io/blog">Blog</a>
+</div><div class="sidebar-block">
+  <div class="sidebar-toc">
+    
+    
+      <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../colophon.html">Colophon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">1. Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">2. Permutation groups</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="permutations.html">2.1 Permutations in RepLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="construction.html">2.2 Groups from scratch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="properties.html">2.3 Computing group properties</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.4 Subgroups</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subgroup-test">Subgroup test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#group-intersection">Group intersection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#subgroup-leaving-vector-invariant">Subgroup leaving vector invariant</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setwise-stabilizer">Setwise stabilizer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pointwise-stabilizer">Pointwise stabilizer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#partition-stabilizer">Partition stabilizer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../absgrps/index.html">3. Abstract groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">A. GNU Free Documentation License</a></li>
+</ul>
+
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+        <div id="right-column">
+          
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ol class="breadcrumb">
+    <li><a href="../index.html">Handbook</a></li>
+    
+    <li><a href="index.html">2. Permutation groups</a></li>
+    
+    <li>2.4 Subgroups</li>
+  </ol>
+</div>
+
+          <div class="document clearer body">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="subgroups">
+<h1>2.4 Subgroups<a class="headerlink" href="#subgroups" title="Permalink to this headline">¶</a></h1>
+<p>We start with the symmetric group of degree <span class="math notranslate nohighlight">\(4\)</span>, the alternating group of degree <span class="math notranslate nohighlight">\(4\)</span>, and the cyclic group of order 4.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">S4</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">PermutationGroup</span><span class="p">.</span><span class="n">symmetric</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+<span class="n">A4</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">PermutationGroup</span><span class="p">.</span><span class="n">alternating</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+<span class="n">C4</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">PermutationGroup</span><span class="p">.</span><span class="n">cyclic</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="subgroup-test">
+<h2>Subgroup test<a class="headerlink" href="#subgroup-test" title="Permalink to this headline">¶</a></h2>
+<p>We can ask whether a group is a subgroup of another. Of course, both <code class="docutils literal notranslate"><span class="pre">A4</span></code> and <code class="docutils literal notranslate"><span class="pre">C4</span></code> are subgroups of <code class="docutils literal notranslate"><span class="pre">S4</span></code>.</p>
+<p>But we remark that none of <code class="docutils literal notranslate"><span class="pre">A4</span></code> and <code class="docutils literal notranslate"><span class="pre">C4</span></code> is contained in the other.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">A4</span><span class="p">.</span><span class="n">isSubgroupOf</span><span class="p">(</span><span class="n">C4</span><span class="p">)</span>
+<span class="n">C4</span><span class="p">.</span><span class="n">isSubgroupOf</span><span class="p">(</span><span class="n">A4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans = 0
+ans = 0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="group-intersection">
+<h2>Group intersection<a class="headerlink" href="#group-intersection" title="Permalink to this headline">¶</a></h2>
+<p>We just saw that <code class="docutils literal notranslate"><span class="pre">A4</span></code> and <code class="docutils literal notranslate"><span class="pre">C4</span></code> have a non-trivial intersection. Let us compute it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">A4</span><span class="p">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">C4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =
+
+Permutation group acting on 4 elements of order 2
+            identity: [1, 2, 3, 4]
+generator(1 or &#39;x1&#39;): [3, 4, 1, 2]
+    recognize.source: Cyclic group C(2) of order 2 &lt; x | x^2 = 1 &gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observe that <code class="docutils literal notranslate"><span class="pre">C4</span></code> contains all cyclic shifts of the elements <code class="docutils literal notranslate"><span class="pre">[1</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">4]</span></code>; but only shifting by an even number of elements
+leads to an even permutation. Thus the intersection contains two elements: the identity and the cyclic-shift-by-two <code class="docutils literal notranslate"><span class="pre">[3</span> <span class="pre">4</span> <span class="pre">1</span> <span class="pre">2]</span></code>.</p>
+<p>RepLAB can compute the intersection of arbitrary groups as long as they have the same <em>type</em>. For example, it would be an error to
+compute the intersection of <span class="math notranslate nohighlight">\(S_4\)</span> and <span class="math notranslate nohighlight">\(S_5\)</span> defined as such:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">S4</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">PermutationGroup</span><span class="p">.</span><span class="n">symmetric</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+<span class="n">S5</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">PermutationGroup</span><span class="p">.</span><span class="n">symmetric</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="n">S4</span><span class="p">.</span><span class="n">hasSameTypeAs</span><span class="p">(</span><span class="n">S5</span><span class="p">)</span> <span class="c">% no! thus the following is an error</span>
+<span class="n">S4</span><span class="p">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">S5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans = 0
+error: assert (self.hasSameTypeAs (other)) failed
+error: called from
+    assert at line 99 column 11
+    intersection at line 470 column 13
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="subgroup-leaving-vector-invariant">
+<h2>Subgroup leaving vector invariant<a class="headerlink" href="#subgroup-leaving-vector-invariant" title="Permalink to this headline">¶</a></h2>
+<p>Permutations act on vectors by permuting their coordinates. For example, given a row or column vector <span class="math notranslate nohighlight">\(\vec{v}\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="p">=</span> <span class="p">[</span><span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">1</span><span class="p">];</span>
+<span class="n">v</span> <span class="p">=</span> <span class="p">[</span><span class="mf">1.3</span> <span class="mf">2.3</span> <span class="mf">2.3</span> <span class="mf">1.3</span><span class="p">];</span>
+<span class="n">v1</span> <span class="p">=</span> <span class="n">v</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>v1 =
+
+   2.3000   2.3000   1.3000   1.3000
+</pre></div>
+</div>
+</div>
+</div>
+<aside class="sidebar">
+<p>We can write <code class="docutils literal notranslate"><span class="pre">v2(h)</span> <span class="pre">=</span> <span class="pre">v</span></code> as well. For invariance under permutation, the choice does not matter.
+Formally, only <code class="docutils literal notranslate"><span class="pre">v2</span></code>
+corresponds to the <a class="reference external" href="https://en.wikipedia.org/wiki/Group_action#Left_group_action">left action</a> of <code class="docutils literal notranslate"><span class="pre">h</span></code> on <code class="docutils literal notranslate"><span class="pre">v</span></code>.
+We want a left action because of how we defined permutation composition.</p>
+</aside>
+<p>Given a group <span class="math notranslate nohighlight">\(G\)</span>, we are now looking for the subgroup of <span class="math notranslate nohighlight">\(G\)</span> that leaves <span class="math notranslate nohighlight">\(\vec{v}\)</span> invariant under permutation.
+This can be readily computed using the <a class="reference external" href="https://replab.github.io/replab/api/permutation_groups.html#+replab.PermutationGroup.stabilizer" title="(in RepLAB v1.0.0)"><span class="xref myst">vectorStabilizer</span></a> method.</p>
+<p>In the present case, this will be the <a class="reference external" href="https://groupprops.subwiki.org/wiki/Klein_four-group">group of order four</a> that contains:</p>
+<ul class="simple">
+<li><p>the identity,</p></li>
+<li><p>the permutation of the first and last element,</p></li>
+<li><p>the permutation of the two middle elements,</p></li>
+<li><p>the permutation that swaps the first/last, and the two middle elements at the same time.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="p">=</span> <span class="n">S4</span><span class="p">.</span><span class="n">vectorStabilizer</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>G =
+
+warning: -largeArrayDims and -compatibleArrayDims are accepted for compatibility, but ignored
+Permutation group acting on 4 elements of order 4
+            identity: [1, 2, 3, 4]
+generator(1 or &#39;x1&#39;): [4, 2, 3, 1]
+generator(2 or &#39;x2&#39;): [1, 3, 2, 4]
+    recognize.source: Klein four-group &lt; a, x | a^2 = x^2 = x a x^-1 a^-1 = 1 &gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>One can of course start with another group than the symmetric group, and compute its subgroup leaving <span class="math notranslate nohighlight">\(\vec{v}\)</span> invariant.
+If one starts with the alternating group, there is only one non-trivial element that satisfies the requirement.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="p">=</span> <span class="n">A4</span><span class="p">.</span><span class="n">vectorStabilizer</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H =
+
+Permutation group acting on 4 elements of order 2
+            identity: [1, 2, 3, 4]
+generator(1 or &#39;x1&#39;): [4, 3, 2, 1]
+    recognize.source: Cyclic group C(2) of order 2 &lt; x | x^2 = 1 &gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="setwise-stabilizer">
+<h2>Setwise stabilizer<a class="headerlink" href="#setwise-stabilizer" title="Permalink to this headline">¶</a></h2>
+<p>The setwise stabilizer is the subgroup that leaves a subset of the integer <span class="math notranslate nohighlight">\(1, \ldots, n\)</span> invariant, while not preserving
+necessarily their place inside the set.
+If we start from the group of all permutations acting on four elements, and ask that the first two elements stay in the first
+two positions, we can swap the first two elements, swap the last two elements, or do both.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">S4</span><span class="p">.</span><span class="n">setwiseStabilizer</span><span class="p">([</span><span class="mi">1</span> <span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =
+
+Permutation group acting on 4 elements of order 4
+            identity: [1, 2, 3, 4]
+generator(1 or &#39;x1&#39;): [2, 1, 3, 4]
+generator(2 or &#39;x2&#39;): [1, 2, 4, 3]
+    recognize.source: Klein four-group &lt; a, x | a^2 = x^2 = x a x^-1 a^-1 = 1 &gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pointwise-stabilizer">
+<h2>Pointwise stabilizer<a class="headerlink" href="#pointwise-stabilizer" title="Permalink to this headline">¶</a></h2>
+<p>The pointwise stabilzier is the subgroup that leaves every point of a set in place. If we start from the group of all
+permutations acting on four elements, and ask that the first two elements stay in place, we can only swap the two last
+elements.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">S4</span><span class="p">.</span><span class="n">pointwiseStabilizer</span><span class="p">([</span><span class="mi">1</span> <span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =
+
+Permutation group acting on 4 elements of order 2
+            identity: [1, 2, 3, 4]
+generator(1 or &#39;x1&#39;): [1, 2, 4, 3]
+    recognize.source: Cyclic group C(2) of order 2 &lt; x | x^2 = 1 &gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="partition-stabilizer">
+<h2>Partition stabilizer<a class="headerlink" href="#partition-stabilizer" title="Permalink to this headline">¶</a></h2>
+<p>There are several conflicting notions of a <em>partition</em> in discrete mathematics. Here, a <a class="reference external" href="https://replab.github.io/replab/api/misc.html#+replab.Partition" title="(in RepLAB v1.0.0)"><span class="xref myst">Partition</span></a> is
+the description of the set <span class="math notranslate nohighlight">\(\{1,\ldots,n\}\)</span> as the union of disjoint subsets.</p>
+<p>A partition can be created from blocks.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">Partition</span><span class="p">.</span><span class="n">fromBlocks</span><span class="p">({[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">]</span> <span class="p">[</span><span class="mi">3</span> <span class="mi">4</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>P =
+
+Partition &#39;12|34&#39;
+blockIndex: [1, 1, 2, 2]
+    blocks: {[1, 2], [3, 4]}
+         n: 4
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then, we can ask for the unordered partition stabilizer, i.e. the subgroup of a group that preserves the partition structure,
+but without keeping the blocks at their place.
+For the partition above, that means we can reorder the elements inside a block, and permute blocks of the same size.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">S4</span><span class="p">.</span><span class="n">unorderedPartitionStabilizer</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =
+
+Permutation group acting on 4 elements of order 8
+            identity: [1, 2, 3, 4]
+generator(1 or &#39;x1&#39;): [2, 1, 3, 4]
+generator(2 or &#39;x2&#39;): [3, 4, 1, 2]
+generator(3 or &#39;x3&#39;): [1, 2, 4, 3]
+    recognize.source: Dihedral group of order 8
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+
+          </div>
+
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../absgrps/index.html" title="3. Abstract groups"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="properties.html" title="2.3 Computing group properties"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">The RepLAB Handbook</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >2. Permutation groups</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">2.4 Subgroups</a></li> 
+      </ul>
+    </div>
+
+  </body>
+</html>

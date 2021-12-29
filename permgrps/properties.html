@@ -28,11 +28,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script src="../_static/js/collapse_helper.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Bibliography" href="../bibliography.html" />
-    <link rel="prev" title="2.2 Constructing permutation groups" href="construction.html" />
+    <link rel="next" title="2.4 Subgroups" href="subgroups.html" />
+    <link rel="prev" title="2.2 Groups from scratch" href="construction.html" />
   
    
 
@@ -44,10 +46,10 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../bibliography.html" title="Bibliography"
+          <a href="subgroups.html" title="2.4 Subgroups"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="construction.html" title="2.2 Constructing permutation groups"
+          <a href="construction.html" title="2.2 Groups from scratch"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">The RepLAB Handbook</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">2. Permutation groups</a> &#187;</li>
@@ -84,13 +86,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../intro/index.html">1. Introduction</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">2. Permutation groups</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="permutations.html">2.1 Permutations in RepLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="construction.html">2.2 Constructing permutation groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="construction.html">2.2 Groups from scratch</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.3 Computing group properties</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#group-order">Group order</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#commutativity">Commutativity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simple-groups">Simple groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#group-exponent">Group exponent</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="subgroups.html">2.4 Subgroups</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../absgrps/index.html">3. Abstract groups</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../license.html">A. GNU Free Documentation License</a></li>
 </ul>
@@ -117,25 +124,201 @@
             
   <section class="tex2jax_ignore mathjax_ignore" id="computing-group-properties">
 <h1>2.3 Computing group properties<a class="headerlink" href="#computing-group-properties" title="Permalink to this headline">¶</a></h1>
-<p>Let us construct a few example groups.</p>
+<p>RepLAB helps us investigate the properties of groups. Let us see a few of those.</p>
+<p>We will work with the symmetric group of degree <span class="math notranslate nohighlight">\(4\)</span>, the alternating group of degree <span class="math notranslate nohighlight">\(4\)</span>, and the cyclic group of order 4.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">h1</span> <span class="p">=</span> <span class="p">[</span><span class="mi">2</span> <span class="mi">1</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">];</span>
-<span class="n">h2</span> <span class="p">=</span> <span class="p">[</span><span class="mi">3</span> <span class="mi">4</span> <span class="mi">1</span> <span class="mi">2</span><span class="p">];</span>
-<span class="n">D8</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">PermutationGroup</span><span class="p">.</span><span class="n">of</span><span class="p">(</span><span class="n">h1</span><span class="p">,</span> <span class="n">h2</span><span class="p">);</span>
-<span class="n">H</span><span class="p">.</span><span class="n">order</span>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">S4</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">PermutationGroup</span><span class="p">.</span><span class="n">symmetric</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">A4</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">PermutationGroup</span><span class="p">.</span><span class="n">alternating</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">C4</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">PermutationGroup</span><span class="p">.</span><span class="n">cyclic</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>error: &#39;H&#39; undefined near line 1, column 1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>S4 =
+
+Symmetric group acting on 4 elements
+            identity: [1, 2, 3, 4]
+generator(1 or &#39;x1&#39;): [2, 3, 4, 1]
+generator(2 or &#39;x2&#39;): [2, 1, 3, 4]
+    recognize.source: Symmetric group S(4)
+
+A4 =
+
+Permutation group acting on 4 elements of order 12
+            identity: [1, 2, 3, 4]
+generator(1 or &#39;x1&#39;): [2, 1, 4, 3]
+generator(2 or &#39;x2&#39;): [2, 3, 1, 4]
+    recognize.source: Alternating group A(4) of degree 4
+
+C4 =
+
+Permutation group acting on 4 elements of order 4
+            identity: [1, 2, 3, 4]
+generator(1 or &#39;x1&#39;): [2, 3, 4, 1]
+    recognize.source: Cyclic group C(4) of order 4 &lt; x | x^4 = 1 &gt;
 </pre></div>
 </div>
 </div>
 </div>
 <section id="group-order">
 <h2>Group order<a class="headerlink" href="#group-order" title="Permalink to this headline">¶</a></h2>
-<p>We already</p>
+<p>We can readily compute the order of a group.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">S4</span><span class="p">.</span><span class="n">order</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =
+    24
+</pre></div>
+</div>
+</div>
+</div>
+<p>And RepLAB can compute group orders that do not fit in a standard MATLAB/Octave number, so
+all orders returned are of type <code class="docutils literal notranslate"><span class="pre">vpi</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">S100</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">S</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="n">S100_order</span> <span class="p">=</span> <span class="n">S100</span><span class="p">.</span><span class="n">order</span>
+<span class="n">S100_order_class</span> <span class="p">=</span> <span class="nb">class</span><span class="p">(</span><span class="n">S100</span><span class="p">.</span><span class="n">order</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>S100_order =
+    93326215443944152681699238856266700490715968264381621468592963895217
+599993229915608941463976156518286253697920827223758251185210916864000000
+000000000000000000                                                      
+S100_order_class = vpi
+</pre></div>
+</div>
+</div>
+</div>
+<p>Of course, when you work only with smaller groups, you can always convert the order back into
+a standard number type.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">double</span><span class="p">(</span><span class="n">S4</span><span class="p">.</span><span class="n">order</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans = 24
+</pre></div>
+</div>
+</div>
+</div>
+<p>Do not do that if the order is bigger than <span class="math notranslate nohighlight">\(2^53\)</span>! Otherwise the result cannot be stored in a
+<code class="docutils literal notranslate"><span class="pre">double</span></code> exactly in general</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">double</span><span class="p">(</span><span class="n">S100</span><span class="p">.</span><span class="n">order</span><span class="p">)</span> <span class="c">% beware</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans = 9.3326e+157
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="commutativity">
+<h2>Commutativity<a class="headerlink" href="#commutativity" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://groupprops.subwiki.org/wiki/Center">center</a> of a group is the set <span class="math notranslate nohighlight">\(Z(G)\)</span> of all elements of the group that commute with every element of <span class="math notranslate nohighlight">\(G\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">A4</span><span class="p">.</span><span class="nb">center</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =
+
+Permutation group acting on 4 elements of order 1
+        identity: [1, 2, 3, 4]
+recognize.source: Trivial group &lt; | &gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>An <a class="reference external" href="https://groupprops.subwiki.org/wiki/Abelian_group">abelian</a> or commutative group has all its elements commute, and is equal to its center.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">C4_commutative</span> <span class="p">=</span> <span class="n">C4</span><span class="p">.</span><span class="n">isCommutative</span>
+<span class="n">C4</span> <span class="o">==</span> <span class="n">C4</span><span class="p">.</span><span class="nb">center</span>
+<span class="n">A4_commutative</span> <span class="p">=</span> <span class="n">A4</span><span class="p">.</span><span class="n">isCommutative</span>
+<span class="n">A4</span> <span class="o">==</span> <span class="n">A4</span><span class="p">.</span><span class="nb">center</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C4_commutative = 1
+ans = 1
+A4_commutative = 0
+ans = 0
+</pre></div>
+</div>
+</div>
+</div>
+<p>If a group can be  generated by a single element, it is cyclic.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">C4_cyclic</span> <span class="p">=</span> <span class="n">C4</span><span class="p">.</span><span class="n">isCyclic</span>
+<span class="n">A4_cyclic</span> <span class="p">=</span> <span class="n">A4</span><span class="p">.</span><span class="n">isCyclic</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C4_cyclic = 1
+A4_cyclic = 0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="simple-groups">
+<h2>Simple groups<a class="headerlink" href="#simple-groups" title="Permalink to this headline">¶</a></h2>
+<p>A <a class="reference external" href="https://groupprops.subwiki.org/wiki/Simple_group">simple group</a> is a group that does not have a normal subgroup:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">S4_simple</span> <span class="p">=</span> <span class="n">S4</span><span class="p">.</span><span class="n">isSimple</span>
+<span class="n">A4_simple</span> <span class="p">=</span> <span class="n">A4</span><span class="p">.</span><span class="n">isSimple</span>
+<span class="n">C4_simple</span> <span class="p">=</span> <span class="n">C4</span><span class="p">.</span><span class="n">isSimple</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>S4_simple = 0
+A4_simple = 0
+C4_simple = 0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="group-exponent">
+<h2>Group exponent<a class="headerlink" href="#group-exponent" title="Permalink to this headline">¶</a></h2>
+<p>The group <a class="reference external" href="https://groupprops.subwiki.org/wiki/Exponent_of_a_group">exponent</a> is the smallest positive integer <span class="math notranslate nohighlight">\(e\)</span> such that <span class="math notranslate nohighlight">\(g^e = g \cdot g \cdots g = \operatorname{id}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">S4_exponent</span> <span class="p">=</span> <span class="n">S4</span><span class="p">.</span><span class="n">exponent</span>
+<span class="n">A4_exponent</span> <span class="p">=</span> <span class="n">A4</span><span class="p">.</span><span class="n">exponent</span>
+<span class="n">C4_exponent</span> <span class="p">=</span> <span class="n">C4</span><span class="p">.</span><span class="n">exponent</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>S4_exponent = 12
+A4_exponent = 6
+C4_exponent = 4
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -152,10 +335,10 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../bibliography.html" title="Bibliography"
+          <a href="subgroups.html" title="2.4 Subgroups"
              >next</a> |</li>
         <li class="right" >
-          <a href="construction.html" title="2.2 Constructing permutation groups"
+          <a href="construction.html" title="2.2 Groups from scratch"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">The RepLAB Handbook</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" >2. Permutation groups</a> &#187;</li>

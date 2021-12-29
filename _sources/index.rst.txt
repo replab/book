@@ -6,6 +6,7 @@
    preface
    intro/index
    permgrps/index
+   absgrps/index
    bibliography
    license
 
@@ -32,11 +33,11 @@ The RepLAB Handbook
   </div>
   <div class='author-name'>Jean-Daniel Bancal</div>
   <div class='author-info'>
-  Affiliation 1
+  Université Paris-Saclay, CEA, CNRS, Institut de physique théorique
   <br>
-  Affiliation 2
+  91191 Gif-sur-Yvette, France
   <br>
-  <a href="TODO">TODO</a>
+  <a href="jdbancal.physics@gmail.com">jdbancal.physics@gmail.com</a>
   </div>
 
 .. raw:: html
