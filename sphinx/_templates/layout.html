@@ -1,12 +1,12 @@
 {% extends "guzzle_sphinx_theme/layout.html" %}
 
 {# Change the root path element name in the breadcrumbs #}
-{# Change "Handbook" to whatever #}
+{# Change "Applis" to whatever #}
 
 {% block breadcrumbs %}
 <div role="navigation" aria-label="breadcrumbs navigation">
   <ol class="breadcrumb">
-    <li><a href="{{ pathto(master_doc) }}">Handbook</a></li>
+    <li><a href="{{ pathto(master_doc) }}">Applis</a></li>
     {% for doc in parents %}
     <li><a href="{{ doc.link|e }}">{{ doc.title }}</a></li>
     {% endfor %}
@@ -19,6 +19,6 @@
 {% block bottom_rel_links %}
 {% endblock %}
 
-{# Remove the copyright footer #}
-{% block footer %}
+{# Remove bottom copyright #}
+{% block footer_wrapper %}
 {% endblock %}
