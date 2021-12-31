@@ -58,7 +58,7 @@ G_inter_H = G.intersection(H)
 ```
 
 Finite, exact, matrix groups are provided for convenience and pedagogical purposes. As of December 2021, they are
-implemented using brute-force enumeration algorithm, and are limited to group orders in the low hundreds.
+implemented using brute-force enumeration algorithms, and are limited to group orders in the low hundreds.
 
 ## Continuous groups
 
