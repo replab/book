@@ -17,6 +17,7 @@ kernelspec:
 
 run ../../external/replab/replab_init.m
 ```
+(matrix-and-continuous-groups)=
 
 # 4. Matrix and continuous groups
 
@@ -36,6 +37,7 @@ RepLAB provide two matrix group types.
 * Classical compact Lie groups are provided by [ClassicalCompactGroup](+replab.ClassicalCompactGroup). Their elements
   are matrices with floating-point coefficients, and thus all the operations on those group elements are approximate.
 
+(finite-exact-matrix-groups)=
 ## Finite, exact, matrix groups
 
 Here, we define a finite matrix group with two generators. The first one is a permutation matrix, and can thus be
@@ -60,6 +62,7 @@ G_inter_H = G.intersection(H)
 Finite, exact, matrix groups are provided for convenience and pedagogical purposes. As of December 2021, they are
 implemented using brute-force enumeration algorithms, and are limited to group orders in the low hundreds.
 
+(continuous-groups)=
 ## Continuous groups
 
 The following continuous groups are available in RepLAB.
