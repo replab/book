@@ -22,7 +22,7 @@ Those representations can be constructed on a variety of groups.
 ## Trivial representation
 
 This representation always maps all group elements to the identity matrix.
-It can be constructed for any compact group.
+It can be constructed for any compact group using the [trivialRep](+replab.CompactGroup.trivialRep) method.
 One picks the field (`'R'` or `'C'`) and the dimension.
 
 ```{code-cell}
@@ -89,6 +89,8 @@ img = rep.image(g)
 
 The symmetric group provides three constructions of the irreducible representations of the symmetric group.
 Those irreducible representations are indexed by Young diagrams, which are simply written as integer row vectors.
+
+The constructions below are similar to the ones proposed by [Sage](https://doc.sagemath.org/html/en/reference/combinat/sage/combinat/symmetric_group_representations.html), though we wrote an independent implementation.
 
 ```{code-cell}
 S3 = replab.S(3);
