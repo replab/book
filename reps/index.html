@@ -28,10 +28,12 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script src="../_static/js/collapse_helper.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Bibliography" href="../bibliography.html" />
+    <link rel="next" title="5.1 Constructing representations" href="construction.html" />
     <link rel="prev" title="4. Matrix and continuous groups" href="../matgrps/index.html" />
   
    
@@ -44,7 +46,7 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../bibliography.html" title="Bibliography"
+          <a href="construction.html" title="5.1 Constructing representations"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="../matgrps/index.html" title="4. Matrix and continuous groups"
@@ -82,7 +84,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../permgrps/index.html">2. Permutation groups</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../absgrps/index.html">3. Abstract groups</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../matgrps/index.html">4. Matrix and continuous groups</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Representations</a><ul class="simple">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Representations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="construction.html">5.1 Constructing representations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="properties.html">5.2 Representation properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulation.html">5.3 Representation manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subrepresentations.html">5.4 Subrepresentations</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
@@ -109,8 +115,28 @@
             
   <section id="representations">
 <h1>5. Representations<a class="headerlink" href="#representations" title="Permalink to this headline">¶</a></h1>
-<p>The representation of a group…</p>
+<p>Let <span class="math notranslate nohighlight">\(V\)</span> be a finite dimensional vector space over the real or complex numbers.
+We identify <span class="math notranslate nohighlight">\(V\)</span> respectively with <span class="math notranslate nohighlight">\(\mathbb{R}^D\)</span> or <span class="math notranslate nohighlight">\(\mathbb{C}^D\)</span>.
+Below, we write <span class="math notranslate nohighlight">\(\mathbb{K}\)</span> for either of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> or <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(G\)</span> be a compact group (this family contains finite groups and the <a class="reference internal" href="../matgrps/index.html#continuous-groups"><span class="std std-ref">continuous groups</span></a> that can be constructed in RepLAB).
+A linear representation of a group <span class="math notranslate nohighlight">\(G\)</span> is a map from the group to the group of invertible <span class="math notranslate nohighlight">\(D \times D\)</span> matrices over <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>.
+We direct the reader to <span id="id1">Serre [<a class="reference internal" href="../bibliography.html#id4" title="Jean-Pierre Serre. Linear Representations of Finite Groups. Graduate Texts in Mathematics. Springer, 1977.">Ser77</a>]</span> for a gentle introduction to the topic.</p>
+<p>RepLAB proposes ways to construct and manipulate representations.</p>
+<ul class="simple">
+<li><p>Some groups have natural representations: permutation groups act on Euclidean space coordinates, matrix groups provide … matrices.</p></li>
+<li><p>Representations of finite groups are defined simply by providing the matrices corresponding to the images of the generators.</p></li>
+<li><p>Representations can be transformed by taking the complex conjugate, the dual representation, changing the underlying field.</p></li>
+<li><p>Representations can be combined by taking tensor products or writing direct sums.</p></li>
+<li><p>One can find and manipulate subrepresentations.</p></li>
+</ul>
+<p>Those operations are described in the following sections.</p>
 <div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="construction.html">5.1 Constructing representations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="properties.html">5.2 Representation properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manipulation.html">5.3 Representation manipulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="subrepresentations.html">5.4 Subrepresentations</a></li>
+</ul>
 </div>
 </section>
 
@@ -127,7 +153,7 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../bibliography.html" title="Bibliography"
+          <a href="construction.html" title="5.1 Constructing representations"
              >next</a> |</li>
         <li class="right" >
           <a href="../matgrps/index.html" title="4. Matrix and continuous groups"

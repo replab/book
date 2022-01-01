@@ -1,0 +1,358 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  
+  <!-- Licensed under the Apache 2.0 License -->
+  <link rel="stylesheet" type="text/css" href="../_static/fonts/open-sans/stylesheet.css" />
+  <!-- Licensed under the SIL Open Font License -->
+  <link rel="stylesheet" type="text/css" href="../_static/fonts/source-serif-pro/source-serif-pro.css" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap-theme.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>5.1 Constructing representations &#8212; The RepLAB Handbook</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/guzzle.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../_static/js/collapse_helper.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5.2 Representation properties" href="properties.html" />
+    <link rel="prev" title="5. Representations" href="index.html" />
+  
+   
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="properties.html" title="5.2 Representation properties"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="5. Representations"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">The RepLAB Handbook</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">5. Representations</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">5.1 Constructing representations</a></li> 
+      </ul>
+    </div>
+    <div class="container-wrapper">
+
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+  <div id="left-column">
+    <div class="sphinxsidebar"><div class="text-logo">
+  <a href="
+    ../index.html">The RepLAB Handbook</a>&nbsp;&nbsp;
+  <a href="https://github.com/replab/book"><i class="fab fa-github"></i></a>&nbsp;
+  <br>
+  <a class="website-part" href="https://replab.github.io"><img src="../_static/img/logo48.png" width="24" height="24" /></a>
+  &nbsp;
+  <a class="website-current" href="https://replab.github.io/book">Book</a>
+  &nbsp;
+  <a class="website-part" href="https://replab.github.io/apps">Applis</a>
+  &nbsp;
+  <a class="website-part" href="https://replab.github.io/api">API</a>
+</div><div class="sidebar-block">
+  <div class="sidebar-toc">
+    
+    
+      <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../colophon.html">Colophon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../permgrps/index.html">2. Permutation groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../absgrps/index.html">3. Abstract groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matgrps/index.html">4. Matrix and continuous groups</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">5. Representations</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.1 Constructing representations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#trivial-representation">Trivial representation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#by-images-of-generators">By images of generators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#natural-defining-representations">Natural/defining representations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#irreducible-representations-of-s-n">Irreducible representations of <span class="math notranslate nohighlight">\(S_n\)</span></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="properties.html">5.2 Representation properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulation.html">5.3 Representation manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subrepresentations.html">5.4 Subrepresentations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">A. GNU Free Documentation License</a></li>
+</ul>
+
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+        <div id="right-column">
+          
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ol class="breadcrumb">
+    <li><a href="../index.html">Applis</a></li>
+    
+    <li><a href="index.html">5. Representations</a></li>
+    
+    <li>5.1 Constructing representations</li>
+  </ol>
+</div>
+
+          <div class="document clearer body">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="constructing-representations">
+<h1>5.1 Constructing representations<a class="headerlink" href="#constructing-representations" title="Permalink to this headline">¶</a></h1>
+<p>Those representations can be constructed on a variety of groups.</p>
+<section id="trivial-representation">
+<h2>Trivial representation<a class="headerlink" href="#trivial-representation" title="Permalink to this headline">¶</a></h2>
+<p>This representation always maps all group elements to the identity matrix.
+It can be constructed for any compact group using the <a class="reference external" href="https://replab.github.io/api/groups.html#+replab.CompactGroup.trivialRep" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">trivialRep</span></a> method.
+One picks the field (<code class="docutils literal notranslate"><span class="pre">'R'</span></code> or <code class="docutils literal notranslate"><span class="pre">'C'</span></code>) and the dimension.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">S3</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">S</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">rep</span> <span class="p">=</span> <span class="n">S3</span><span class="p">.</span><span class="n">trivialRep</span><span class="p">(</span><span class="s">&#39;R&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rep =
+
+Orthogonal trivial reducible representation
+   dimension: 3
+       field: &#39;R&#39;
+       group: Symmetric group acting on 3 elements
+isExactValue: true
+   isUnitary: true
+</pre></div>
+</div>
+</div>
+</div>
+<p>Not very interesting in itself, the trivial representation is useful as part of larger constructions.</p>
+</section>
+<section id="by-images-of-generators">
+<h2>By images of generators<a class="headerlink" href="#by-images-of-generators" title="Permalink to this headline">¶</a></h2>
+<p>For finite groups, we define representations from images of the generators.
+For example, the <em>sign</em> representation of a permutation is one-dimensional, and the images are <span class="math notranslate nohighlight">\(1\)</span> for even permutations, <span class="math notranslate nohighlight">\(-1\)</span> for odd permutations.
+The sign of a transposition is always odd, so, by picking the generators <code class="docutils literal notranslate"><span class="pre">[2</span> <span class="pre">1</span> <span class="pre">3]</span></code> and <code class="docutils literal notranslate"><span class="pre">[1</span> <span class="pre">3</span> <span class="pre">2]</span></code>, we construct the sign representation of <span class="math notranslate nohighlight">\(S_3\)</span> pretty easily.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">S3</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">S</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">rep</span> <span class="p">=</span> <span class="n">S3</span><span class="p">.</span><span class="n">repByImages</span><span class="p">(</span><span class="s">&#39;R&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;preimages&#39;</span><span class="p">,</span> <span class="p">{[</span><span class="mi">2</span> <span class="mi">1</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">3</span> <span class="mi">2</span><span class="p">]},</span> <span class="s">&#39;images&#39;</span><span class="p">,</span> <span class="p">{[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]})</span>
+<span class="n">rep</span><span class="p">.</span><span class="nb">image</span><span class="p">([</span><span class="mi">2</span> <span class="mi">3</span> <span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rep =
+
+Orthogonal representation
+   dimension: 1
+       field: &#39;R&#39;
+       group: Symmetric group acting on 3 elements
+   isUnitary: true
+preimages{1}: [2, 1, 3]
+   images{1}: -1
+preimages{2}: [1, 3, 2]
+   images{2}: -1
+
+ans = 1
+</pre></div>
+</div>
+</div>
+</div>
+<p>While RepLAB has experimental support for inexact representations, it is best to provide exact images.
+If the images have integer entries, it is sufficient to provide standard MATLAB/Octave floating-point matrices.
+Beyond that, RepLAB supports images in the cyclotomic field, and those need to be encoded in a particular way
+(we do not support the Symbolic Toolbox of either MATLAB or Octave).</p>
+<p>The simplest is to provide a <a class="reference external" href="https://replab.github.io/api/numerics.html#+replab.cyclotomic" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">cyclotomic</span></a> matrix constructed from a string representation, taking care to separate the columns with commas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">S3</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">S</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">img_231</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">cyclotomic</span><span class="p">(</span><span class="s">&#39;[-1/2, 3/4; -1, -1/2]&#39;</span><span class="p">);</span>
+<span class="n">img_213</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">cyclotomic</span><span class="p">(</span><span class="s">&#39;[1, 0; 0, -1]&#39;</span><span class="p">);</span>
+<span class="n">rep</span> <span class="p">=</span> <span class="n">S3</span><span class="p">.</span><span class="n">repByImages</span><span class="p">(</span><span class="s">&#39;R&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&#39;preimages&#39;</span><span class="p">,</span> <span class="p">{[</span><span class="mi">2</span> <span class="mi">3</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span> <span class="mi">1</span> <span class="mi">3</span><span class="p">]},</span> <span class="s">&#39;images&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">img_231</span><span class="p">,</span> <span class="n">img_213</span><span class="p">})</span>
+<span class="n">rep</span><span class="p">.</span><span class="nb">image</span><span class="p">([</span><span class="mi">2</span> <span class="mi">3</span> <span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rep =
+
+Real representation
+    dimension: 2
+        field: &#39;R&#39;
+        group: Symmetric group acting on 3 elements
+inverseImages: {[-1/2, -3/4; 1, -1/2], [1, 0; 0, -1]}
+    isUnitary: false
+ preimages{1}: [2, 3, 1]
+    images{1}: [-1/2, 3/4; -1, -1/2]
+ preimages{2}: [2, 1, 3]
+    images{2}: [1, 0; 0, -1]
+
+ans =
+
+  -0.5000   0.7500
+  -1.0000  -0.5000
+</pre></div>
+</div>
+</div>
+</div>
+<p>To check whether the representation is defined correctly, one can simply run a few randomized checks.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">rep</span><span class="p">.</span><span class="n">check</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Checking commutes with commutant algebra...
+Checking composition...
+Checking identity...
+Checking matrixColAction...
+Checking matrixRowAction...
+Checking respects division algebra...
+Checking unitary...
+Checking withTorusImage-&gt;torusImage...
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="natural-defining-representations">
+<h2>Natural/defining representations<a class="headerlink" href="#natural-defining-representations" title="Permalink to this headline">¶</a></h2>
+<p>Permutation groups have a <em>natural representation</em> that permutes Euclidean coordinates.
+While there are two choices on how to encode a permutation as a permutation matrix, there is only one choice that obeys <span class="math notranslate nohighlight">\(\rho_{g \cdot h} = \rho_g \cdot \rho_h\)</span>, which is the one that RepLAB provides.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">S3</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">S</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">rep</span> <span class="p">=</span> <span class="n">S3</span><span class="p">.</span><span class="n">naturalRep</span><span class="p">;</span>
+<span class="n">rep</span><span class="p">.</span><span class="nb">image</span><span class="p">([</span><span class="mi">2</span> <span class="mi">3</span> <span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =
+
+   0   0   1
+   1   0   0
+   0   1   0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Classical compact matrix groups have a <em>defining representation</em>, which simply returns the matrix element.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">U2</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">U</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">rep</span> <span class="p">=</span> <span class="n">U2</span><span class="p">.</span><span class="n">definingRep</span><span class="p">;</span>
+<span class="n">g</span> <span class="p">=</span> <span class="n">U2</span><span class="p">.</span><span class="n">sample</span>
+<span class="n">img</span> <span class="p">=</span> <span class="n">rep</span><span class="p">.</span><span class="nb">image</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>g =
+
+  -0.1587 - 0.0124i  -0.7184 + 0.6771i
+  -0.9822 - 0.1000i   0.1184 - 0.1064i
+
+img =
+
+  -0.1587 - 0.0124i  -0.7184 + 0.6771i
+  -0.9822 - 0.1000i   0.1184 - 0.1064i
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="irreducible-representations-of-s-n">
+<h2>Irreducible representations of <span class="math notranslate nohighlight">\(S_n\)</span><a class="headerlink" href="#irreducible-representations-of-s-n" title="Permalink to this headline">¶</a></h2>
+<p>The symmetric group provides three constructions of the irreducible representations of the symmetric group.
+Those irreducible representations are indexed by Young diagrams, which are simply written as integer row vectors.</p>
+<p>The constructions below are similar to the ones proposed by <a class="reference external" href="https://doc.sagemath.org/html/en/reference/combinat/sage/combinat/symmetric_group_representations.html">Sage</a>, though we wrote an independent implementation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">S3</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">S</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">youngDiagram</span> <span class="p">=</span> <span class="p">[</span><span class="mi">2</span> <span class="mi">1</span><span class="p">];</span>
+<span class="n">repSpecht</span> <span class="p">=</span> <span class="n">S3</span><span class="p">.</span><span class="n">irrep</span><span class="p">(</span><span class="n">youngDiagram</span><span class="p">,</span> <span class="s">&#39;specht&#39;</span><span class="p">);</span>
+<span class="n">repSeminormal</span> <span class="p">=</span> <span class="n">S3</span><span class="p">.</span><span class="n">irrep</span><span class="p">(</span><span class="n">youngDiagram</span><span class="p">,</span> <span class="s">&#39;seminormal&#39;</span><span class="p">);</span>
+<span class="n">repOrthogonal</span> <span class="p">=</span> <span class="n">S3</span><span class="p">.</span><span class="n">irrep</span><span class="p">(</span><span class="n">youngDiagram</span><span class="p">,</span> <span class="s">&#39;orthogonal&#39;</span><span class="p">);</span>
+<span class="n">g</span> <span class="p">=</span> <span class="p">[</span><span class="mi">2</span> <span class="mi">3</span> <span class="mi">1</span><span class="p">];</span>
+<span class="n">imgSpecht</span> <span class="p">=</span> <span class="n">repSpecht</span><span class="p">.</span><span class="nb">image</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="s">&#39;exact&#39;</span><span class="p">)</span>
+<span class="n">imgSeminormal</span> <span class="p">=</span> <span class="n">repSeminormal</span><span class="p">.</span><span class="nb">image</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="s">&#39;exact&#39;</span><span class="p">)</span>
+<span class="n">imgOrthogonal</span> <span class="p">=</span> <span class="n">repOrthogonal</span><span class="p">.</span><span class="nb">image</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="s">&#39;exact&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =
+  -1  -1  
+   1   0  
+ans =
+  -1/2   3/4  
+   -1   -1/2  
+ans =
+     -1/2     sqrt(3)/2  
+  -sqrt(3)/2    -1/2     
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+
+          </div>
+
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="properties.html" title="5.2 Representation properties"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="5. Representations"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">The RepLAB Handbook</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >5. Representations</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">5.1 Constructing representations</a></li> 
+      </ul>
+    </div>
+<script type="text/javascript">
+  $("#mobile-toggle a").click(function () {
+    $("#left-column").toggle();
+  });
+</script>
+<script type="text/javascript" src="../_static/js/bootstrap.js"></script>
+
+  </body>
+</html>
