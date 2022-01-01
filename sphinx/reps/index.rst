@@ -19,7 +19,9 @@ RepLAB proposes ways to construct and manipulate representations.
 
 * Representations can be combined by taking tensor products or writing direct sums.
 
-We
+* One can find and manipulate subrepresentations.
+
+Those operations are described in the following sections.
 
 .. toctree::
   :maxdepth: 1
