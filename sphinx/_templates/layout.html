@@ -6,7 +6,7 @@
 {% block breadcrumbs %}
 <div role="navigation" aria-label="breadcrumbs navigation">
   <ol class="breadcrumb">
-    <li><a href="{{ pathto(master_doc) }}">Applis</a></li>
+    <li><a href="{{ pathto(master_doc) }}">Book</a></li>
     {% for doc in parents %}
     <li><a href="{{ doc.link|e }}">{{ doc.title }}</a></li>
     {% endfor %}
