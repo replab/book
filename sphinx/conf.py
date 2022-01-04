@@ -12,7 +12,7 @@ from pathlib import Path
 ##
 
 project = 'replab-book'
-copyright = '2018-2021, Denis Rosset, Jean-Daniel Bancal and collaborators'
+copyright = '2018-2022, Denis Rosset, Jean-Daniel Bancal and collaborators'
 author = 'Denis Rosset, Jean-Daniel Bancal and collaborators'
 version = Path('../version.txt').read_text().strip()
 release = version
