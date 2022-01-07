@@ -114,7 +114,7 @@
           
 <div role="navigation" aria-label="breadcrumbs navigation">
   <ol class="breadcrumb">
-    <li><a href="../index.html">Applis</a></li>
+    <li><a href="../index.html">Book</a></li>
     
     <li><a href="index.html">2. Permutation groups</a></li>
     
@@ -147,6 +147,7 @@ generator(2 or &#39;x2&#39;): [2, 1, 3, 4]
 
 A4 =
 
+warning: -largeArrayDims and -compatibleArrayDims are accepted for compatibility, but ignored
 Permutation group acting on 4 elements of order 12
             identity: [1, 2, 3, 4]
 generator(1 or &#39;x1&#39;): [2, 1, 4, 3]
@@ -179,7 +180,7 @@ generator(1 or &#39;x1&#39;): [2, 3, 4, 1]
 </div>
 </div>
 </div>
-<p>And RepLAB can compute group orders that do not fit in a standard MATLAB/Octave number, so
+<p>Since RepLAB can compute group orders that do not fit in a standard MATLAB/Octave number,
 all orders returned are of type <code class="docutils literal notranslate"><span class="pre">vpi</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -199,7 +200,7 @@ S100_order_class = vpi
 </div>
 </div>
 </div>
-<p>Of course, when you work only with smaller groups, you can always convert the order back into
+<p>Of course, when working only with smaller groups, the order can always be converted back into
 a standard number type.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -213,8 +214,8 @@ a standard number type.</p>
 </div>
 </div>
 </div>
-<p>Do not do that if the order is bigger than <span class="math notranslate nohighlight">\(2^53\)</span>! Otherwise the result cannot be stored in a
-<code class="docutils literal notranslate"><span class="pre">double</span></code> exactly in general</p>
+<p>But do not do that if the order is bigger than <span class="math notranslate nohighlight">\(2^{53}\)</span>! Otherwise the result cannot be stored exactly
+in a <code class="docutils literal notranslate"><span class="pre">double</span></code> anymore</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">double</span><span class="p">(</span><span class="n">S100</span><span class="p">.</span><span class="n">order</span><span class="p">)</span> <span class="c">% beware</span>
@@ -304,7 +305,7 @@ C4_simple = 0
 </section>
 <section id="group-exponent">
 <h2>Group exponent<a class="headerlink" href="#group-exponent" title="Permalink to this headline">¶</a></h2>
-<p>The group <a class="reference external" href="https://groupprops.subwiki.org/wiki/Exponent_of_a_group">exponent</a> is the smallest positive integer <span class="math notranslate nohighlight">\(e\)</span> such that <span class="math notranslate nohighlight">\(g^e = g \cdot g \cdots g = \operatorname{id}\)</span>.</p>
+<p>The group <a class="reference external" href="https://groupprops.subwiki.org/wiki/Exponent_of_a_group">exponent</a> is the smallest positive integer <span class="math notranslate nohighlight">\(e\)</span> such that <span class="math notranslate nohighlight">\(g^e = g \cdot g \cdots g = \operatorname{id}\)</span> for all group element <span class="math notranslate nohighlight">\(g\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">S4_exponent</span> <span class="p">=</span> <span class="n">S4</span><span class="p">.</span><span class="n">exponent</span>

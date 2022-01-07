@@ -115,7 +115,7 @@
           
 <div role="navigation" aria-label="breadcrumbs navigation">
   <ol class="breadcrumb">
-    <li><a href="../index.html">Applis</a></li>
+    <li><a href="../index.html">Book</a></li>
     
     <li><a href="index.html">5. Representations</a></li>
     
@@ -128,10 +128,10 @@
   <section class="tex2jax_ignore mathjax_ignore" id="subrepresentations">
 <h1>5.4 Subrepresentations<a class="headerlink" href="#subrepresentations" title="Permalink to this headline">¶</a></h1>
 <p>Let <span class="math notranslate nohighlight">\(V = \mathbb{K}^D\)</span> be the space on which a representation <span class="math notranslate nohighlight">\(\rho: G \to \operatorname{GL}(V)\)</span> acts, with <span class="math notranslate nohighlight">\(\mathbb{K} = \mathbb{R}\)</span> or <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>.
-An subspace <span class="math notranslate nohighlight">\(W\)</span> of <span class="math notranslate nohighlight">\(V\)</span> is invariant under <span class="math notranslate nohighlight">\(\rho\)</span> if and only if: for all <span class="math notranslate nohighlight">\(\vec{w} \in W\)</span> and <span class="math notranslate nohighlight">\(g \in G\)</span>, we have <span class="math notranslate nohighlight">\(\rho_g \vec{w} \in W\)</span>.</p>
+A subspace <span class="math notranslate nohighlight">\(W\)</span> of <span class="math notranslate nohighlight">\(V\)</span> is invariant under <span class="math notranslate nohighlight">\(\rho\)</span> if and only if: for all <span class="math notranslate nohighlight">\(\vec{w} \in W\)</span> and <span class="math notranslate nohighlight">\(g \in G\)</span>, we have <span class="math notranslate nohighlight">\(\rho_g \vec{w} \in W\)</span>.</p>
 <aside class="sidebar">
-<p>In most representation theory textbooks, including <span id="id1">[<a class="reference internal" href="../bibliography.html#id4" title="Jean-Pierre Serre. Linear Representations of Finite Groups. Graduate Texts in Mathematics. Springer, 1977.">Ser77</a>]</span>, the authors assume right at the beginning that all representations are unitary.
-Then, the invariant subspaces are singled out using orthonormal bases.
+<p>In most representation theory textbooks, including <span id="id1">[<a class="reference internal" href="../bibliography.html#id4" title="Jean-Pierre Serre. Linear Representations of Finite Groups. Graduate Texts in Mathematics. Springer, 1977.">Ser77</a>]</span>, the authors assume right from the beginning that all representations are unitary.
+Invariant subspaces are then singled out using orthonormal bases.
 The approach we employ in RepLAB is more general as it works with non-unitary (sub)representations.
 Working with non-unitary (sub)representations is particularly important when working in exact arithmetic.</p>
 </aside>
@@ -147,7 +147,7 @@ The injection map is identified with a <span class="math notranslate nohighlight
 The projection map is identified with a <span class="math notranslate nohighlight">\(d \times D\)</span> matrix such that</p>
 <div class="math notranslate nohighlight">
 \[
-\vec{v} \to \vec{w} = P \cdot \vec{v}.
+\vec{v} \to \vec{w} = P \cdot \vec{v},
 \]</div>
 <p>a vector of the parent space is projected into the subspace. The projector on the subspace is given by <span class="math notranslate nohighlight">\(\Pi = I \cdot P\)</span>.</p>
 <p>In RepLAB, subrepresentations, of type <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.SubRep" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">SubRep</span></a> can be constructed in several ways:</p>
@@ -157,7 +157,7 @@ The projection map is identified with a <span class="math notranslate nohighligh
 <li><p>by splitting a representation,</p></li>
 <li><p>by computing the irreducible decomposition of a representation.</p></li>
 </ul>
-<p>Note that <em>similar representations</em>, already seen in the previous section, are a special case of subrepresentations where <span class="math notranslate nohighlight">\(D=d\)</span> and the projection and injection maps are bijective.</p>
+<p>Note that <a class="reference external" href="manipulation.html#change-of-basis"><em>similar representations</em></a> are a special case of subrepresentations where <span class="math notranslate nohighlight">\(D=d\)</span> and the projection and injection maps are bijective.</p>
 <p>In the examples below, we will work with the three-dimensional natural representation of <span class="math notranslate nohighlight">\(S_3\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -223,7 +223,7 @@ basis(1,&#39;exact&#39;): [1; 1; 1]
 </div>
 </div>
 </div>
-<p>This projection map is computed in exact arithmetic, when the injection map is given in exact arithmetic as well.
+<p>When the injection map is given in exact arithmetic as well, the projection map is computed in exact arithmetic as well.
 This can slow down the computations considerably, however.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -359,8 +359,8 @@ Orthogonal reducible representation
         isUnitary: true
            parent: Orthogonal reducible representation
 basis(1,&#39;double&#39;): [0.57735; 0.57735; 0.57735]
-basis(2,&#39;double&#39;): [0.8165; -0.40825; -0.40825]
-basis(3,&#39;double&#39;): [1.4073e-16; 0.70711; -0.70711]
+basis(2,&#39;double&#39;): [1.4073e-16; 0.70711; -0.70711]
+basis(3,&#39;double&#39;): [0.8165; -0.40825; -0.40825]
      component(1): Isotypic component R(1) (trivial)
      component(2): Isotypic component R(2) (nontrivial)
 </pre></div>
@@ -387,9 +387,9 @@ However, all these objects are subrepresentations in themselves, so the projecti
 
 inj2 =
 
-   8.1650e-01   1.4073e-16
-  -4.0825e-01   7.0711e-01
-  -4.0825e-01  -7.0711e-01
+   1.4073e-16   8.1650e-01
+   7.0711e-01  -4.0825e-01
+  -7.0711e-01  -4.0825e-01
 </pre></div>
 </div>
 </div>
@@ -451,9 +451,9 @@ error: &#39;refined&#39; undefined near line 1, column 1
 <section id="decomposing-a-representation-exact">
 <h2>Decomposing a representation (exact)<a class="headerlink" href="#decomposing-a-representation-exact" title="Permalink to this headline">¶</a></h2>
 <p>RepLAB was developed originally to work with approximate decompositions.
-Later on, we added support for exact real and complex character tables.
+Later on, support was added for exact real and complex character tables.
 However, RepLAB is unable to compute those character tables by itself, and relies either on precomputed data or known construction for families of groups.</p>
-<p>To decompose a representation, one first needs to verify that the corresponding character table (real or complex), is available.</p>
+<p>To decompose a representation exactly, one first needs to verify that the corresponding character table (real or complex), is available.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">rep</span><span class="p">.</span><span class="n">group</span><span class="p">.</span><span class="n">realCharacterTable</span>
@@ -491,8 +491,8 @@ Orthogonal reducible representation
        isUnitary: true
           parent: Orthogonal reducible representation
 basis(1,&#39;exact&#39;): [1/3; 1/3; 1/3]
-basis(2,&#39;exact&#39;): [2/3; -1/3; -1/3]
-basis(3,&#39;exact&#39;): [0; -sqrt(3)/3; sqrt(3)/3]
+basis(2,&#39;exact&#39;): [1/6; -1/3; 1/6]
+basis(3,&#39;exact&#39;): [-sqrt(3)/6; 0; sqrt(3)/6]
     component(1): Isotypic component R(1) (trivial)
     component(2): Isotypic component 0 x R(1) (nontrivial)
     component(3): Isotypic component R(2) (nontrivial)
@@ -510,13 +510,13 @@ basis(3,&#39;exact&#39;): [0; -sqrt(3)/3; sqrt(3)/3]
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =
-  1/3   2/3       0      
-  1/3  -1/3  -sqrt(3)/3  
-  1/3  -1/3   sqrt(3)/3  
+  1/3   1/6  -sqrt(3)/6  
+  1/3  -1/3       0      
+  1/3   1/6   sqrt(3)/6  
 ans =
-  1       1          1      
-  1     -1/2       -1/2     
-  0  -sqrt(3)/2  sqrt(3)/2  
+      1      1     1     
+      1     -2     1     
+  -sqrt(3)   0  sqrt(3)  
 </pre></div>
 </div>
 </div>
@@ -525,9 +525,10 @@ ans =
 <section id="adding-a-group-to-the-atlas">
 <h2>Adding a group to the Atlas<a class="headerlink" href="#adding-a-group-to-the-atlas" title="Permalink to this headline">¶</a></h2>
 <p>If a group is not known in RepLAB, it is possible to add it to the Atlas, using a JSON interoperability format.
-Group data can be exported from <a class="reference external" href="https://www.gap-system.org/">GAP System</a>.</p>
-<p>First, one needs to install <a class="reference external" href="https://www.gap-system.org/">GAP System</a> and set the <a class="reference external" href="https://replab.github.io/api/globals.html#+replab.+globals.gapBinaryPath" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">gapBinaryPath</span></a> variable.</p>
-<p>Then, one runs the <a class="reference external" href="https://replab.github.io/api/abstract_groups.html#+replab.Atlas.computeAndAdd" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">computeAndAdd</span></a> method.</p>
+This format includes character tables and allows RepLAB to <a class="reference internal" href="../permgrps/construction.html"><span class="doc std std-doc">recognize</span></a> the group.</p>
+<p>Group data can be exported from <a class="reference external" href="https://www.gap-system.org/">GAP System</a>.
+First, one needs to install <a class="reference external" href="https://www.gap-system.org/">GAP System</a> and set the <a class="reference external" href="https://replab.github.io/api/globals.html#+replab.+globals.gapBinaryPath" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">gapBinaryPath</span></a> variable.
+Then, one runs the <a class="reference external" href="https://replab.github.io/api/abstract_groups.html#+replab.Atlas.computeAndAdd" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">computeAndAdd</span></a> method.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">replab</span><span class="o">.</span><span class="n">PermutationGroup</span><span class="o">.</span><span class="n">of</span><span class="p">([</span><span class="mi">2</span> <span class="mi">3</span> <span class="mi">1</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span> <span class="mi">1</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">5</span> <span class="mi">4</span><span class="p">]);</span>
 <span class="n">replab</span><span class="o">.</span><span class="n">Atlas</span><span class="o">.</span><span class="n">computeAndAdd</span><span class="p">(</span><span class="n">G</span><span class="p">);</span>
 </pre></div>

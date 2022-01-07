@@ -11,7 +11,7 @@ We direct the reader to :cite:t:`Serre1977` for a gentle introduction to the top
 
 RepLAB proposes ways to construct and manipulate representations.
 
-* Some groups have natural representations: permutation groups act on Euclidean space coordinates, matrix groups provide ... matrices.
+* Some groups have natural representations: permutation groups act naturally on Euclidean space coordinates, matrix groups provide ... matrices.
 
 * Representations of finite groups are defined simply by providing the matrices corresponding to the images of the generators.
 

@@ -108,7 +108,7 @@
           
 <div role="navigation" aria-label="breadcrumbs navigation">
   <ol class="breadcrumb">
-    <li><a href="../index.html">Applis</a></li>
+    <li><a href="../index.html">Book</a></li>
     
     <li><a href="index.html">2. Permutation groups</a></li>
     
@@ -120,7 +120,7 @@
             
   <section class="tex2jax_ignore mathjax_ignore" id="permutations-in-replab">
 <h1>2.1 Permutations in RepLAB<a class="headerlink" href="#permutations-in-replab" title="Permalink to this headline">¶</a></h1>
-<p>In RepLAB, a permutation <span class="math notranslate nohighlight">\(g\)</span> is described using a row vector <span class="math notranslate nohighlight">\((g(1), g(2), \ldots, g(n))\)</span>.
+<p>In RepLAB, a permutation <span class="math notranslate nohighlight">\(g\)</span> is described using the row vector of permutation images <span class="math notranslate nohighlight">\((g(1), g(2), \ldots, g(n))\)</span>.
 This corresponds to the behavior of the <a class="reference external" href="https://www.mathworks.com/help/matlab/ref/randperm.html">randperm</a> and <a class="reference external" href="https://www.mathworks.com/help/matlab/ref/perms.html">perms</a> functions, and enables the use of such vectors of indices as matrix/vector subscripts.</p>
 <p>Let us define two permutations.
 Note that in RepLAB permutations act on a set of given size: <code class="docutils literal notranslate"><span class="pre">[1</span> <span class="pre">2</span> <span class="pre">3]</span></code> and <code class="docutils literal notranslate"><span class="pre">[1</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">4]</span></code> are not equivalent, even though they both represent the identity of a permutation group.</p>
@@ -171,14 +171,14 @@ k2 = 1
 </div>
 </div>
 <aside class="sidebar">
-<p>In some textbooks, for example <span id="id1">[<a class="reference internal" href="../bibliography.html#id2" title="Derek F. Holt, Bettina Eick, and Eamonn A. O'Brien. Handbook of Computational Group Theory. CRC Press, January 2005. ISBN 978-1-4200-3521-6.">HEOBrien05</a>]</span>, the exponent notation is used for permutations: one writes <span class="math notranslate nohighlight">\(2^g\)</span> for the image of 2 under the permutation <span class="math notranslate nohighlight">\(g\)</span>. Then the composition <span class="math notranslate nohighlight">\(g h\)</span> is defined as <span class="math notranslate nohighlight">\((2^g)^h\)</span>, and <span class="math notranslate nohighlight">\(g\)</span> is applied first! This differs from RepLAB convention.
+<p>In some textbooks, for example <span id="id1">[<a class="reference internal" href="../bibliography.html#id2" title="Derek F. Holt, Bettina Eick, and Eamonn A. O'Brien. Handbook of Computational Group Theory. CRC Press, January 2005. ISBN 978-1-4200-3521-6.">HEOBrien05</a>]</span>, the exponent notation is used for permutations: one then writes <span class="math notranslate nohighlight">\(2^g\)</span> for the image of 2 under the permutation <span class="math notranslate nohighlight">\(g\)</span>. The composition <span class="math notranslate nohighlight">\(g h\)</span> is then defined as <span class="math notranslate nohighlight">\((2^g)^h\)</span>, and <span class="math notranslate nohighlight">\(g\)</span> is applied first! This differs from the RepLAB convention, which rather matches the standard definition of <a class="reference external" href="https://en.wikipedia.org/wiki/Function_composition">function composition</a>.
 One should then be careful when mixing different textbooks or computer algebra systems.</p>
 </aside>
-<p>But how does one compute the inverse? Luckily, we can construct the group of all permutations of a given size
-in RepLAB, and call the methods that represent group operations. The function <a class="reference external" href="https://replab.github.io/api/named_discrete_groups.html#+replab.S" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">replab.S(n)</span></a> creates the
+<p>But how can one compute the inverse of a permutation? Luckily, we can construct the group of all permutations of a given size
+in RepLAB, and call its methods to perform group operations. The function <a class="reference external" href="https://replab.github.io/api/named_discrete_groups.html#+replab.S" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">replab.S(n)</span></a> creates the
 symmetric group acting on <span class="math notranslate nohighlight">\(\{1,2,\ldots,n\}\)</span>. The returned object is of type <a class="reference external" href="https://replab.github.io/api/permutation_groups.html#+replab.PermutationGroup" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">replab.PermutationGroup</span></a>
-and it proposes notably <a class="reference external" href="https://replab.github.io/api/permutation_groups.html#+replab.PermutationGroup.identity" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">identity</span></a>, <a class="reference external" href="https://replab.github.io/api/permutation_groups.html#+replab.PermutationGroup.compose" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">compose</span></a> and
-<a class="reference external" href="https://replab.github.io/api/permutation_groups.html#+replab.PermutationGroup.inverse" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">inverse</span></a>:</p>
+and it proposes notably the <a class="reference external" href="https://replab.github.io/api/permutation_groups.html#+replab.PermutationGroup.identity" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">identity</span></a>, <a class="reference external" href="https://replab.github.io/api/permutation_groups.html#+replab.PermutationGroup.compose" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">compose</span></a> and
+<a class="reference external" href="https://replab.github.io/api/permutation_groups.html#+replab.PermutationGroup.inverse" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">inverse</span></a> methods:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">S</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>

@@ -27,10 +27,9 @@ One then simply subclasses [CompactGroup](+replab.CompactGroup).
 However, it is easier to work with the primitives RepLAB already provides.
 ```
 We now move to symmetries of the Euclidean space, including continuous symmetries.
-RepLAB provide two matrix group types.
+RepLAB provide two types of matrix groups.
 
-* Finite matrix groups are described by [MatrixGroup](+replab.MatrixGroup), and their coefficients must necessarily
-  be taken from the [field of cyclotomics](https://en.wikipedia.org/wiki/Cyclotomic_field). Their elements are
+* Finite matrix groups are described by [MatrixGroup](+replab.MatrixGroup), and their coefficients must belong to the [field of cyclotomics](https://en.wikipedia.org/wiki/Cyclotomic_field). Matrix group elements are
   cyclotomic matrices of type [cyclotomic](+replab.cyclotomic). RepLAB provides an implementation of exact arithmetic
   in the field of cyclotomics using a Java library.
 
@@ -42,8 +41,8 @@ RepLAB provide two matrix group types.
 
 Here, we define a finite matrix group with two generators. The first one is a permutation matrix, and can thus be
 represented exactly using floating-point numbers (i.e, the standard MATLAB/Octave notation).
-The second, however, cannot, and we need to construct an exact [cyclotomic](+replab.cyclotomic) matrix. Note that
-the argument to [cyclotomic](+replab.cyclotomic) is given as a string, and it will be parsed inside RepLAB.
+The second, however, cannot, and needs to be constructed as an exact [cyclotomic](+replab.cyclotomic) matrix. Note that
+the argument to [cyclotomic](+replab.cyclotomic) is given as a string, and it is parsed inside RepLAB.
 
 ```{code-cell}
 M1 = [0 1; 1 0];

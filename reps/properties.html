@@ -114,7 +114,7 @@
           
 <div role="navigation" aria-label="breadcrumbs navigation">
   <ol class="breadcrumb">
-    <li><a href="../index.html">Applis</a></li>
+    <li><a href="../index.html">Book</a></li>
     
     <li><a href="index.html">5. Representations</a></li>
     
@@ -218,7 +218,7 @@ ans =
 </section>
 <section id="unitary-representations">
 <h2>Unitary representations<a class="headerlink" href="#unitary-representations" title="Permalink to this headline">¶</a></h2>
-<p>One can check if a representation is unitary (i.e. whether <span class="math notranslate nohighlight">\(\rho_g^{-1} = \rho_g^\dagger\)</span>) through the property <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.isUnitary" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">isUnitary</span></a>.
+<p>One can check whether a representation is unitary (i.e. whether <span class="math notranslate nohighlight">\(\rho_g^{-1} = \rho_g^\dagger\)</span>) through the property <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.isUnitary" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">isUnitary</span></a>.
 If RepLAB knows a representation is unitary, faster and more robust algorithms can be used.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -273,7 +273,7 @@ generator(1 or &#39;x1&#39;): [2, 3, 1]
 </section>
 <section id="irreducibility">
 <h2>Irreducibility<a class="headerlink" href="#irreducibility" title="Permalink to this headline">¶</a></h2>
-<p>An irreducible representation is a representation that has no trivial subrepresentation, through the method <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.isIrreducible" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">isIrreducible</span></a>.</p>
+<p>An irreducible representation is a representation that has no trivial subrepresentation (see <a class="reference internal" href="subrepresentations.html"><span class="doc std std-doc">dedicated section</span></a>). This property can be checked through the method <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.isIrreducible" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">isIrreducible</span></a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">rep</span><span class="p">.</span><span class="n">isIrreducible</span>
@@ -281,8 +281,7 @@ generator(1 or &#39;x1&#39;): [2, 3, 1]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>warning: -largeArrayDims and -compatibleArrayDims are accepted for compatibility, but ignored
-ans = 1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans = 1
 </pre></div>
 </div>
 </div>

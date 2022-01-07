@@ -116,7 +116,7 @@
           
 <div role="navigation" aria-label="breadcrumbs navigation">
   <ol class="breadcrumb">
-    <li><a href="../index.html">Applis</a></li>
+    <li><a href="../index.html">Book</a></li>
     
     <li><a href="index.html">2. Permutation groups</a></li>
     
@@ -141,7 +141,21 @@
 <section id="subgroup-test">
 <h2>Subgroup test<a class="headerlink" href="#subgroup-test" title="Permalink to this headline">¶</a></h2>
 <p>We can ask whether a group is a subgroup of another. Of course, both <code class="docutils literal notranslate"><span class="pre">A4</span></code> and <code class="docutils literal notranslate"><span class="pre">C4</span></code> are subgroups of <code class="docutils literal notranslate"><span class="pre">S4</span></code>.</p>
-<p>But we remark that none of <code class="docutils literal notranslate"><span class="pre">A4</span></code> and <code class="docutils literal notranslate"><span class="pre">C4</span></code> is contained in the other.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">A4</span><span class="p">.</span><span class="n">isSubgroupOf</span><span class="p">(</span><span class="n">S4</span><span class="p">)</span>
+<span class="n">C4</span><span class="p">.</span><span class="n">isSubgroupOf</span><span class="p">(</span><span class="n">S4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans = 1
+ans = 1
+</pre></div>
+</div>
+</div>
+</div>
+<p>But we remark that none of <code class="docutils literal notranslate"><span class="pre">A4</span></code> and <code class="docutils literal notranslate"><span class="pre">C4</span></code> is contained in the other one.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">A4</span><span class="p">.</span><span class="n">isSubgroupOf</span><span class="p">(</span><span class="n">C4</span><span class="p">)</span>
@@ -159,7 +173,7 @@ ans = 0
 </section>
 <section id="group-intersection">
 <h2>Group intersection<a class="headerlink" href="#group-intersection" title="Permalink to this headline">¶</a></h2>
-<p>We just saw that <code class="docutils literal notranslate"><span class="pre">A4</span></code> and <code class="docutils literal notranslate"><span class="pre">C4</span></code> have a non-trivial intersection. Let us compute it.</p>
+<p>We just saw that <code class="docutils literal notranslate"><span class="pre">A4</span></code> and <code class="docutils literal notranslate"><span class="pre">C4</span></code> are not subgroups of each other. Let us see if they contain a common subgroup.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">A4</span><span class="p">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">C4</span><span class="p">)</span>
@@ -203,7 +217,7 @@ error: called from
 </section>
 <section id="subgroup-leaving-vector-invariant">
 <h2>Subgroup leaving vector invariant<a class="headerlink" href="#subgroup-leaving-vector-invariant" title="Permalink to this headline">¶</a></h2>
-<p>Permutations act on vectors by permuting their coordinates. For example, given a row or column vector <span class="math notranslate nohighlight">\(\vec{v}\)</span>:</p>
+<p>Permutations act on vectors by permuting their coordinates. For example, we define the action of a permutation on a row or column vector <span class="math notranslate nohighlight">\(\vec{v}\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="p">=</span> <span class="p">[</span><span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">1</span><span class="p">];</span>
@@ -221,14 +235,14 @@ error: called from
 </div>
 </div>
 <aside class="sidebar">
-<p>We can write <code class="docutils literal notranslate"><span class="pre">v2(h)</span> <span class="pre">=</span> <span class="pre">v</span></code> as well. For invariance under permutation, the choice does not matter.
-Formally, only <code class="docutils literal notranslate"><span class="pre">v2</span></code>
+<p>A priori, we could equally define the action of a permutation on a vector as <code class="docutils literal notranslate"><span class="pre">v2(h)</span> <span class="pre">=</span> <span class="pre">v</span></code>. For invariance under permutation, the choice does not matter.
+Formally, however, only <code class="docutils literal notranslate"><span class="pre">v1</span></code>
 corresponds to the <a class="reference external" href="https://en.wikipedia.org/wiki/Group_action#Left_group_action">left action</a> of <code class="docutils literal notranslate"><span class="pre">h</span></code> on <code class="docutils literal notranslate"><span class="pre">v</span></code>.
 We want a left action because of how we defined permutation composition.</p>
 </aside>
 <p>Given a group <span class="math notranslate nohighlight">\(G\)</span>, we are now looking for the subgroup of <span class="math notranslate nohighlight">\(G\)</span> that leaves <span class="math notranslate nohighlight">\(\vec{v}\)</span> invariant under permutation.
 This can be readily computed using the <a class="reference external" href="https://replab.github.io/api/permutation_groups.html#+replab.PermutationGroup.stabilizer" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">vectorStabilizer</span></a> method.</p>
-<p>In the present case, this will be the <a class="reference external" href="https://groupprops.subwiki.org/wiki/Klein_four-group">group of order four</a> that contains:</p>
+<p>When considering the symmetric group, this will be the <a class="reference external" href="https://groupprops.subwiki.org/wiki/Klein_four-group">group of order four</a> that contains:</p>
 <ul class="simple">
 <li><p>the identity,</p></li>
 <li><p>the permutation of the first and last element,</p></li>
@@ -254,7 +268,8 @@ generator(2 or &#39;x2&#39;): [1, 3, 2, 4]
 </div>
 </div>
 <p>One can of course start with another group than the symmetric group, and compute its subgroup leaving <span class="math notranslate nohighlight">\(\vec{v}\)</span> invariant.
-If one starts with the alternating group, there is only one non-trivial element that satisfies the requirement.</p>
+The result is then less obvious. For instance,
+if one starts with the alternating group, there is only one non-trivial element that satisfies the requirement.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="p">=</span> <span class="n">A4</span><span class="p">.</span><span class="n">vectorStabilizer</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
@@ -277,7 +292,7 @@ generator(1 or &#39;x1&#39;): [4, 3, 2, 1]
 <h2>Setwise stabilizer<a class="headerlink" href="#setwise-stabilizer" title="Permalink to this headline">¶</a></h2>
 <p>The setwise stabilizer is the subgroup that leaves a subset of the integer <span class="math notranslate nohighlight">\(1, \ldots, n\)</span> invariant, while not preserving
 necessarily their place inside the set.
-If we start from the group of all permutations acting on four elements, and ask that the first two elements stay in the first
+If we start from the group of all permutations acting on four elements, and require that the first two elements must stay in one of the first
 two positions, we can swap the first two elements, swap the last two elements, or do both.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -344,8 +359,8 @@ blockIndex: [1, 1, 2, 2]
 </div>
 </div>
 <p>Then, we can ask for the unordered partition stabilizer, i.e. the subgroup of a group that preserves the partition structure,
-but without keeping the blocks at their place.
-For the partition above, that means we can reorder the elements inside a block, and permute blocks of the same size.</p>
+but without necessarily keeping the blocks in their original place.
+This means we can reorder the elements inside a block, and permute blocks of the same size. For the partition above, this restricts permutations to the dihedral group:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">S4</span><span class="p">.</span><span class="n">unorderedPartitionStabilizer</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>

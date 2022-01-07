@@ -103,7 +103,7 @@
           
 <div role="navigation" aria-label="breadcrumbs navigation">
   <ol class="breadcrumb">
-    <li><a href="../index.html">Applis</a></li>
+    <li><a href="../index.html">Book</a></li>
     
     <li>4. Matrix and continuous groups</li>
   </ol>
@@ -119,10 +119,9 @@ One then simply subclasses <a class="reference external" href="https://replab.gi
 However, it is easier to work with the primitives RepLAB already provides.</p>
 </aside>
 <p>We now move to symmetries of the Euclidean space, including continuous symmetries.
-RepLAB provide two matrix group types.</p>
+RepLAB provide two types of matrix groups.</p>
 <ul class="simple">
-<li><p>Finite matrix groups are described by <a class="reference external" href="https://replab.github.io/api/finite_groups.html#+replab.MatrixGroup" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">MatrixGroup</span></a>, and their coefficients must necessarily
-be taken from the <a class="reference external" href="https://en.wikipedia.org/wiki/Cyclotomic_field">field of cyclotomics</a>. Their elements are
+<li><p>Finite matrix groups are described by <a class="reference external" href="https://replab.github.io/api/finite_groups.html#+replab.MatrixGroup" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">MatrixGroup</span></a>, and their coefficients must belong to the <a class="reference external" href="https://en.wikipedia.org/wiki/Cyclotomic_field">field of cyclotomics</a>. Matrix group elements are
 cyclotomic matrices of type <a class="reference external" href="https://replab.github.io/api/numerics.html#+replab.cyclotomic" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">cyclotomic</span></a>. RepLAB provides an implementation of exact arithmetic
 in the field of cyclotomics using a Java library.</p></li>
 <li><p>Classical compact Lie groups are provided by <a class="reference external" href="https://replab.github.io/api/continuous_groups.html#+replab.ClassicalCompactGroup" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">ClassicalCompactGroup</span></a>. Their elements
@@ -132,8 +131,8 @@ are matrices with floating-point coefficients, and thus all the operations on th
 <span id="id3"></span><h2>Finite, exact, matrix groups<a class="headerlink" href="#finite-exact-matrix-groups" title="Permalink to this headline">¶</a></h2>
 <p>Here, we define a finite matrix group with two generators. The first one is a permutation matrix, and can thus be
 represented exactly using floating-point numbers (i.e, the standard MATLAB/Octave notation).
-The second, however, cannot, and we need to construct an exact <a class="reference external" href="https://replab.github.io/api/numerics.html#+replab.cyclotomic" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">cyclotomic</span></a> matrix. Note that
-the argument to <a class="reference external" href="https://replab.github.io/api/numerics.html#+replab.cyclotomic" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">cyclotomic</span></a> is given as a string, and it will be parsed inside RepLAB.</p>
+The second, however, cannot, and needs to be constructed as an exact <a class="reference external" href="https://replab.github.io/api/numerics.html#+replab.cyclotomic" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">cyclotomic</span></a> matrix. Note that
+the argument to <a class="reference external" href="https://replab.github.io/api/numerics.html#+replab.cyclotomic" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">cyclotomic</span></a> is given as a string, and it is parsed inside RepLAB.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">M1</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">1</span><span class="p">;</span> <span class="mi">1</span> <span class="mi">0</span><span class="p">];</span>
@@ -201,15 +200,15 @@ of type <a class="reference external" href="https://replab.github.io/api/numeric
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sample_O3 =
 
-  -0.109611  -0.161738  -0.980727
-   0.990520  -0.099962  -0.094220
-   0.082797   0.981758  -0.171162
+   0.595152  -0.786925  -0.162921
+   0.802131   0.569409   0.179887
+   0.048789   0.237744  -0.970102
 
 sample_SO3 =
 
-   0.7851  -0.5651   0.2533
-   0.5100   0.3579  -0.7822
-   0.3514   0.7433   0.5692
+  -0.2941  -0.9448  -0.1445
+  -0.4994   0.2808  -0.8196
+   0.8149  -0.1689  -0.5544
 
 det_SO3 = 1
 </pre></div>
@@ -231,16 +230,16 @@ det_SO3 = 1
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sample_U2 =
 
-   0.6792 + 0.2458i   0.6866 + 0.0829i
-  -0.6901 + 0.0453i   0.6916 - 0.2083i
+   0.124988 - 0.440542i  -0.041920 + 0.888000i
+   0.842212 + 0.284568i   0.455796 + 0.044149i
 
 sample_SU2 =
 
-   0.7485 + 0.2413i   0.6166 + 0.0368i
-  -0.6166 + 0.0368i   0.7485 - 0.2413i
+  -0.3558 + 0.8803i   0.0881 + 0.3011i
+  -0.0881 + 0.3011i  -0.3558 - 0.8803i
 
-det_U2 =  0.998507 + 0.054623i
-det_SU2 =  1.0000e+00 - 1.1102e-16i
+det_U2 =  0.3644 - 0.9312i
+det_SU2 =  1.0000e+00 + 5.5511e-17i
 </pre></div>
 </div>
 </div>
@@ -256,8 +255,8 @@ det_SU2 =  1.0000e+00 - 1.1102e-16i
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sample_Sp2 =
 
-  -0.010427 + 0.66224i + 0.33183j -...  0.51602 - 0.15864i + 0.24185j - 0...  
-  -0.4984 - 0.26777i + 0.18232j + 0...  0.13245 - 0.56256i - 0.28023j - 0...  
+  0.29609 + 0.082325i + 0.099008j + ...  0.42135 + 0.70228i + 0.050035j + 0...  
+  0.19274 - 0.47002i - 0.67422j + 0....  0.049164 + 0.071166i + 0.26812j - ...  
 </pre></div>
 </div>
 </div>

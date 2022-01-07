@@ -26,7 +26,7 @@ rep = S3.irrep([2 1], 'seminormal');
 
 ## Change of basis
 
-From a representation, one can return a similar representation under a change of basis: $\rho_g \to T \rho_g T^{-1}$
+From a representation, one can return another representation similar under a change of basis: $\rho_g \to T \rho_g T^{-1}$
 
 ```{code-cell}
 T = [1 0; 0 -1];
@@ -35,7 +35,7 @@ sim = rep.similarRep(T)
 
 The original representation is called the [parent](+replab.SubRep.parent), and the change of basis matrix is available through the [basis](+replab.SubRep.basis) method.
 
-At construction, one can provide the inverse, if known, so it does not need to be recomputed.
+At construction, one can provide the inverse of the basis change, if known, so it does not need to be recomputed.
 
 ```{code-cell}
 T = [1 0; 0 -1];
@@ -58,7 +58,7 @@ uni.isUnitary
 Given a representation over $\mathbb{R}$, one can easily construct a representation over $\mathbb{C}$ by extending the field of scalars through the [complexification](+replab.Rep.complexification) method.
 
 ```{code-cell}
-rep.complexificiation
+rep.complexification
 ```
 
 ## Conjugate representation
@@ -87,15 +87,15 @@ img2 = dualRep.image([2 3 1])
 
 ## Tensor product and powers
 
-Given two (or more!) representations of the same group, one can compute the tensor product.
-For that purpose, we prodive an overload of the standard [kron](+replab.Rep.kron) MATLAB/Octave syntax.
+Given two (or more!) representations of the same group, one can compute their tensor product.
+For that purpose, we provide an overload of the standard [kron](+replab.Rep.kron) MATLAB/Octave syntax.
 
 ```{code-cell}
 rep2 = kron(rep, rep)
 rep2.image([2 3 1])
 ```
 
-When computing the tensor power, we have a dedicated method [tensorPower](+replab.Rep.tensorPower).
+We have a dedicated method [tensorPower](+replab.Rep.tensorPower) to computing the tensor product of several identical representations.
 
 ```{code-cell}
 rep2 = rep.tensorPower(2);
@@ -104,7 +104,7 @@ rep2.image([2 3 1])
 
 ## Direct sum
 
-Given two (or more) representations, one can compute the direct sum, whose images are block-diagonal matrices;
+Given two (or more) representations, one can compute their direct sum, whose images are block-diagonal matrices;
 this is provided through the overload of the standard [blkdiag](+replab.Rep.blkdiag) syntax.
 
 

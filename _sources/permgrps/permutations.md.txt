@@ -17,7 +17,7 @@ run ../../external/replab/replab_init.m
 ```
 # 2.1 Permutations in RepLAB
 
-In RepLAB, a permutation $g$ is described using a row vector $(g(1), g(2), \ldots, g(n))$.
+In RepLAB, a permutation $g$ is described using the row vector of permutation images $(g(1), g(2), \ldots, g(n))$.
 This corresponds to the behavior of the [randperm](https://www.mathworks.com/help/matlab/ref/randperm.html) and [perms](https://www.mathworks.com/help/matlab/ref/perms.html) functions, and enables the use of such vectors of indices as matrix/vector subscripts.
 
 Let us define two permutations.
@@ -49,14 +49,14 @@ k2 = k(2)
 ```
 
 ```{sidebar}
-In some textbooks, for example {cite:p}`Holt2005`, the exponent notation is used for permutations: one writes $2^g$ for the image of 2 under the permutation $g$. Then the composition $g h$ is defined as $(2^g)^h$, and $g$ is applied first! This differs from RepLAB convention.
+In some textbooks, for example {cite:p}`Holt2005`, the exponent notation is used for permutations: one then writes $2^g$ for the image of 2 under the permutation $g$. The composition $g h$ is then defined as $(2^g)^h$, and $g$ is applied first! This differs from the RepLAB convention, which rather matches the standard definition of [function composition](https://en.wikipedia.org/wiki/Function_composition).
 One should then be careful when mixing different textbooks or computer algebra systems.
 ```
-But how does one compute the inverse? Luckily, we can construct the group of all permutations of a given size
-in RepLAB, and call the methods that represent group operations. The function [replab.S(n)](+replab.S) creates the
+But how can one compute the inverse of a permutation? Luckily, we can construct the group of all permutations of a given size
+in RepLAB, and call its methods to perform group operations. The function [replab.S(n)](+replab.S) creates the
 symmetric group acting on $\{1,2,\ldots,n\}$. The returned object is of type [replab.PermutationGroup](+replab.PermutationGroup)
-and it proposes notably [identity](+replab.PermutationGroup.identity), [compose](+replab.PermutationGroup.compose) and
-[inverse](+replab.PermutationGroup.inverse):
+and it proposes notably the [identity](+replab.PermutationGroup.identity), [compose](+replab.PermutationGroup.compose) and
+[inverse](+replab.PermutationGroup.inverse) methods:
 
 ```{code-cell}
 G = replab.S(3);

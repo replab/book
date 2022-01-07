@@ -102,7 +102,7 @@
           
 <div role="navigation" aria-label="breadcrumbs navigation">
   <ol class="breadcrumb">
-    <li><a href="../index.html">Applis</a></li>
+    <li><a href="../index.html">Book</a></li>
     
     <li>3. Abstract groups</li>
   </ol>
@@ -159,13 +159,13 @@ If we look at the page describing our <a class="reference external" href="https:
 <p>Informally, a <em>presentation</em> provides a list of generators, here <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(a\)</span>, then a list of relations that those
 generators satisfy. In RepLAB, the identity is written <span class="math notranslate nohighlight">\(1\)</span>, but other sources will use either <span class="math notranslate nohighlight">\(e\)</span> or id.
 The dihedral group of degree 4 and order 8 is the symmetry group of the square. The element <span class="math notranslate nohighlight">\(a\)</span> is the rotation
-by <span class="math notranslate nohighlight">\(90^\circ\)</span>, and of course doing it four times puts the square back in its original position (<span class="math notranslate nohighlight">\(a^4 = 1\)</span>).
-The second generator <span class="math notranslate nohighlight">\(x\)</span> is the mirror symmetry, and doing it twice is the identity (<span class="math notranslate nohighlight">\(x^2 = 1\)</span>).
+by <span class="math notranslate nohighlight">\(90^\circ\)</span>, and of course applying it four times puts the square back in its original position (<span class="math notranslate nohighlight">\(a^4 = 1\)</span>).
+The second generator <span class="math notranslate nohighlight">\(x\)</span> is the mirror symmetry, and applying it twice produces the identity (<span class="math notranslate nohighlight">\(x^2 = 1\)</span>).
 The last relation explains that doing a <span class="math notranslate nohighlight">\(90^\circ\)</span> rotation sandwiched between two mirror operations is the same
 as rotating in the other direction.</p>
 <section id="constructing-abstract-groups">
 <h2>Constructing abstract groups<a class="headerlink" href="#constructing-abstract-groups" title="Permalink to this headline">¶</a></h2>
-<p>How do we construct such a group in RepLAB? The easiest is to provide the presentation.</p>
+<p>How do we construct such a group in RepLAB? The easiest way is by providing the presentation itself.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">AbstractGroup</span><span class="p">.</span><span class="n">fromPresentation</span><span class="p">(</span><span class="s">&#39;&lt; x, a | a^4 = x^2 = 1, x a x^-1 = a^-1 &gt;&#39;</span><span class="p">)</span>

@@ -115,7 +115,7 @@
           
 <div role="navigation" aria-label="breadcrumbs navigation">
   <ol class="breadcrumb">
-    <li><a href="../index.html">Applis</a></li>
+    <li><a href="../index.html">Book</a></li>
     
     <li><a href="index.html">5. Representations</a></li>
     
@@ -138,7 +138,7 @@
 </div>
 <section id="change-of-basis">
 <h2>Change of basis<a class="headerlink" href="#change-of-basis" title="Permalink to this headline">¶</a></h2>
-<p>From a representation, one can return a similar representation under a change of basis: <span class="math notranslate nohighlight">\(\rho_g \to T \rho_g T^{-1}\)</span></p>
+<p>From a representation, one can return another representation similar under a change of basis: <span class="math notranslate nohighlight">\(\rho_g \to T \rho_g T^{-1}\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">0</span> <span class="o">-</span><span class="mi">1</span><span class="p">];</span>
@@ -162,7 +162,7 @@ basis(2,&#39;exact&#39;): [0; -1]
 </div>
 </div>
 <p>The original representation is called the <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.SubRep.parent" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">parent</span></a>, and the change of basis matrix is available through the <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.SubRep.basis" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">basis</span></a> method.</p>
-<p>At construction, one can provide the inverse, if known, so it does not need to be recomputed.</p>
+<p>At construction, one can provide the inverse of the basis change, if known, so it does not need to be recomputed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">0</span> <span class="o">-</span><span class="mi">1</span><span class="p">];</span>
@@ -215,12 +215,20 @@ ans = 1
 <p>Given a representation over <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, one can easily construct a representation over <span class="math notranslate nohighlight">\(\mathbb{C}\)</span> by extending the field of scalars through the <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.complexification" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">complexification</span></a> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">rep</span><span class="p">.</span><span class="n">complexificiation</span>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">rep</span><span class="p">.</span><span class="n">complexification</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>error: subsref: unknown method or property: complexificiation
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =
+
+Encoding of representation: R^d -&gt; C^d
+dimension: 2
+    field: &#39;C&#39;
+    group: Symmetric group acting on 3 elements
+isUnitary: false
+   parent: Real representation
+     type: &#39;R^d -&gt; C^d&#39;
 </pre></div>
 </div>
 </div>
@@ -277,8 +285,8 @@ img2 =
 </section>
 <section id="tensor-product-and-powers">
 <h2>Tensor product and powers<a class="headerlink" href="#tensor-product-and-powers" title="Permalink to this headline">¶</a></h2>
-<p>Given two (or more!) representations of the same group, one can compute the tensor product.
-For that purpose, we prodive an overload of the standard <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.kron" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">kron</span></a> MATLAB/Octave syntax.</p>
+<p>Given two (or more!) representations of the same group, one can compute their tensor product.
+For that purpose, we provide an overload of the standard <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.kron" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">kron</span></a> MATLAB/Octave syntax.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">rep2</span> <span class="p">=</span> <span class="nb">kron</span><span class="p">(</span><span class="n">rep</span><span class="p">,</span> <span class="n">rep</span><span class="p">)</span>
@@ -307,7 +315,7 @@ ans =
 </div>
 </div>
 </div>
-<p>When computing the tensor power, we have a dedicated method <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.tensorPower" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">tensorPower</span></a>.</p>
+<p>We have a dedicated method <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.tensorPower" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">tensorPower</span></a> to computing the tensor product of several identical representations.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">rep2</span> <span class="p">=</span> <span class="n">rep</span><span class="p">.</span><span class="n">tensorPower</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
@@ -329,7 +337,7 @@ ans =
 </section>
 <section id="direct-sum">
 <h2>Direct sum<a class="headerlink" href="#direct-sum" title="Permalink to this headline">¶</a></h2>
-<p>Given two (or more) representations, one can compute the direct sum, whose images are block-diagonal matrices;
+<p>Given two (or more) representations, one can compute their direct sum, whose images are block-diagonal matrices;
 this is provided through the overload of the standard <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.blkdiag" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">blkdiag</span></a> syntax.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
