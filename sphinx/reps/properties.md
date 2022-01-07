@@ -63,7 +63,7 @@ rep.image([2 3 1], 'exact')
 
 ## Unitary representations
 
-One can check if a representation is unitary (i.e. whether $\rho_g^{-1} = \rho_g^\dagger$) through the property [isUnitary](+replab.Rep.isUnitary).
+One can check whether a representation is unitary (i.e. whether $\rho_g^{-1} = \rho_g^\dagger$) through the property [isUnitary](+replab.Rep.isUnitary).
 If RepLAB knows a representation is unitary, faster and more robust algorithms can be used.
 
 ```{code-cell}
@@ -90,7 +90,7 @@ signRep.kernel
 
 ## Irreducibility
 
-An irreducible representation is a representation that has no trivial subrepresentation, through the method [isIrreducible](+replab.Rep.isIrreducible).
+An irreducible representation is a representation that has no trivial subrepresentation (see [dedicated section](subrepresentations.md)). This property can be checked through the method [isIrreducible](+replab.Rep.isIrreducible).
 
 ```{code-cell}
 rep.isIrreducible

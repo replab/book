@@ -45,14 +45,14 @@ $$
 Informally, a *presentation* provides a list of generators, here $x$ and $a$, then a list of relations that those
 generators satisfy. In RepLAB, the identity is written $1$, but other sources will use either $e$ or id.
 The dihedral group of degree 4 and order 8 is the symmetry group of the square. The element $a$ is the rotation
-by $90^\circ$, and of course doing it four times puts the square back in its original position ($a^4 = 1$).
-The second generator $x$ is the mirror symmetry, and doing it twice is the identity ($x^2 = 1$).
+by $90^\circ$, and of course applying it four times puts the square back in its original position ($a^4 = 1$).
+The second generator $x$ is the mirror symmetry, and applying it twice produces the identity ($x^2 = 1$).
 The last relation explains that doing a $90^\circ$ rotation sandwiched between two mirror operations is the same
 as rotating in the other direction.
 
 ## Constructing abstract groups
 
-How do we construct such a group in RepLAB? The easiest is to provide the presentation.
+How do we construct such a group in RepLAB? The easiest way is by providing the presentation itself.
 
 ```{code-cell}
 A = replab.AbstractGroup.fromPresentation('< x, a | a^4 = x^2 = 1, x a x^-1 = a^-1 >')

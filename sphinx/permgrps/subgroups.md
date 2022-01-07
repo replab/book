@@ -29,7 +29,12 @@ C4 = replab.PermutationGroup.cyclic(4);
 
 We can ask whether a group is a subgroup of another. Of course, both `A4` and `C4` are subgroups of `S4`.
 
-But we remark that none of `A4` and `C4` is contained in the other.
+```{code-cell}
+A4.isSubgroupOf(S4)
+C4.isSubgroupOf(S4)
+```
+
+But we remark that none of `A4` and `C4` is contained in the other one.
 
 ```{code-cell}
 A4.isSubgroupOf(C4)
@@ -38,7 +43,7 @@ C4.isSubgroupOf(A4)
 
 ## Group intersection
 
-We just saw that `A4` and `C4` have a non-trivial intersection. Let us compute it.
+We just saw that `A4` and `C4` are not subgroups of each other. Let us see if they contain a common subgroup.
 
 ```{code-cell}
 A4.intersection(C4)
@@ -60,7 +65,7 @@ S4.intersection(S5)
 
 ## Subgroup leaving vector invariant
 
-Permutations act on vectors by permuting their coordinates. For example, given a row or column vector $\vec{v}$:
+Permutations act on vectors by permuting their coordinates. For example, we define the action of a permutation on a row or column vector $\vec{v}$:
 
 ```{code-cell}
 h = [2 3 4 1];
@@ -69,15 +74,15 @@ v1 = v(h)
 ```
 
 ```{sidebar}
-We can write `v2(h) = v` as well. For invariance under permutation, the choice does not matter.
-Formally, only `v2`
+A priori, we could equally define the action of a permutation on a vector as `v2(h) = v`. For invariance under permutation, the choice does not matter.
+Formally, however, only `v1`
 corresponds to the [left action](https://en.wikipedia.org/wiki/Group_action#Left_group_action) of `h` on `v`.
 We want a left action because of how we defined permutation composition.
 ```
 Given a group $G$, we are now looking for the subgroup of $G$ that leaves $\vec{v}$ invariant under permutation.
 This can be readily computed using the [vectorStabilizer](+replab.PermutationGroup.stabilizer) method.
 
-In the present case, this will be the [group of order four](https://groupprops.subwiki.org/wiki/Klein_four-group) that contains:
+When considering the symmetric group, this will be the [group of order four](https://groupprops.subwiki.org/wiki/Klein_four-group) that contains:
 
 * the identity,
 * the permutation of the first and last element,
@@ -89,7 +94,8 @@ G = S4.vectorStabilizer(v)
 ```
 
 One can of course start with another group than the symmetric group, and compute its subgroup leaving $\vec{v}$ invariant.
-If one starts with the alternating group, there is only one non-trivial element that satisfies the requirement.
+The result is then less obvious. For instance, 
+if one starts with the alternating group, there is only one non-trivial element that satisfies the requirement.
 
 ```{code-cell}
 H = A4.vectorStabilizer(v)
@@ -99,7 +105,7 @@ H = A4.vectorStabilizer(v)
 
 The setwise stabilizer is the subgroup that leaves a subset of the integer $1, \ldots, n$ invariant, while not preserving
 necessarily their place inside the set.
-If we start from the group of all permutations acting on four elements, and ask that the first two elements stay in the first
+If we start from the group of all permutations acting on four elements, and require that the first two elements must stay in one of the first
 two positions, we can swap the first two elements, swap the last two elements, or do both.
 
 ```{code-cell}
@@ -128,8 +134,8 @@ P = replab.Partition.fromBlocks({[1 2] [3 4]})
 ```
 
 Then, we can ask for the unordered partition stabilizer, i.e. the subgroup of a group that preserves the partition structure,
-but without keeping the blocks at their place.
-For the partition above, that means we can reorder the elements inside a block, and permute blocks of the same size.
+but without necessarily keeping the blocks in their original place.
+This means we can reorder the elements inside a block, and permute blocks of the same size. For the partition above, this restricts permutations to the dihedral group:
 
 ```{code-cell}
 S4.unorderedPartitionStabilizer(P)

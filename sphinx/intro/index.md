@@ -23,9 +23,9 @@ How is this book structured?
 
 ## 1.2 Installing RepLAB
 
-* we assume RepLAB has been installed
+* We assume RepLAB has been installed, see the [installation instructions](https://replab.github.io/web/tutorials/installation.html) for more details.
 
-* how to initialize
+* The library is initialized by running the command `replab_init` in the main replab folder
 
 
 

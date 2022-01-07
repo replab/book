@@ -1,14 +1,14 @@
 2. Permutation groups
 =====================
 
-The permutations of a finite set $X$ are the first symmetries we will describe.
-Because $X$ is finite, we can assume $X = \{1,2,\ldots,n\}$, and we write $S_n$ the set of all its permutations, and they form a group:
+The first symmetries we will describe are permutations acting on a finite set $X$.
+Because $X$ is finite, we can assume that $X = \{1,2,\ldots,n\}$. We write $S_n$ the set of all possible permutations of elements in the set. These permutations form a group:
 
 * The identity permutation sends $1$ to $1$, $2$ to $2$, ... and $n$ to $n$.
 * Permutations compose, and this composition is associative.
 * The inverse permutation exists.
 
-Here are the available topics.
+Here are the available topics on permutation groups on this subject:
 
 .. toctree::
   :maxdepth: 1

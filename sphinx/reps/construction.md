@@ -17,11 +17,11 @@ run ../../external/replab/replab_init.m
 ```
 # 5.1 Constructing representations
 
-Those representations can be constructed on a variety of groups.
+Representations can be constructed on a variety of groups.
 
 ## Trivial representation
 
-This representation always maps all group elements to the identity matrix.
+The trivial representation maps all group elements to the identity matrix.
 It can be constructed for any compact group using the [trivialRep](+replab.CompactGroup.trivialRep) method.
 One picks the field (`'R'` or `'C'`) and the dimension.
 
@@ -49,7 +49,7 @@ If the images have integer entries, it is sufficient to provide standard MATLAB/
 Beyond that, RepLAB supports images in the cyclotomic field, and those need to be encoded in a particular way
 (we do not support the Symbolic Toolbox of either MATLAB or Octave).
 
-The simplest is to provide a [cyclotomic](+replab.cyclotomic) matrix constructed from a string representation, taking care to separate the columns with commas.
+The simplest is to provide images as [cyclotomic](+replab.cyclotomic) matrices constructed from a string, taking care to separate the columns with commas.
 
 ```{code-cell}
 S3 = replab.S(3);
@@ -87,7 +87,7 @@ img = rep.image(g)
 
 ## Irreducible representations of $S_n$
 
-The symmetric group provides three constructions of the irreducible representations of the symmetric group.
+RepLAB provides three constructions of the irreducible representations of the symmetric group: Specht modules, seminormal and orthogonal representations.
 Those irreducible representations are indexed by Young diagrams, which are simply written as integer row vectors.
 
 The constructions below are similar to the ones proposed by [Sage](https://doc.sagemath.org/html/en/reference/combinat/sage/combinat/symmetric_group_representations.html), though we wrote an independent implementation.

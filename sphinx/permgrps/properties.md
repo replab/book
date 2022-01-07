@@ -35,7 +35,7 @@ We can readily compute the order of a group.
 S4.order
 ```
 
-And RepLAB can compute group orders that do not fit in a standard MATLAB/Octave number, so
+Since RepLAB can compute group orders that do not fit in a standard MATLAB/Octave number,
 all orders returned are of type `vpi`.
 
 ```{code-cell}
@@ -44,15 +44,15 @@ S100_order = S100.order
 S100_order_class = class(S100.order)
 ```
 
-Of course, when you work only with smaller groups, you can always convert the order back into
+Of course, when working only with smaller groups, the order can always be converted back into
 a standard number type.
 
 ```{code-cell}
 double(S4.order)
 ```
 
-Do not do that if the order is bigger than $2^53$! Otherwise the result cannot be stored in a
-`double` exactly in general
+But do not do that if the order is bigger than $2^{53}$! Otherwise the result cannot be stored exactly 
+in a `double` anymore
 
 ```{code-cell}
 double(S100.order) % beware
@@ -94,7 +94,7 @@ C4_simple = C4.isSimple
 
 ## Group exponent
 
-The group [exponent](https://groupprops.subwiki.org/wiki/Exponent_of_a_group) is the smallest positive integer $e$ such that $g^e = g \cdot g \cdots g = \operatorname{id}$.
+The group [exponent](https://groupprops.subwiki.org/wiki/Exponent_of_a_group) is the smallest positive integer $e$ such that $g^e = g \cdot g \cdots g = \operatorname{id}$ for all group element $g$.
 
 ```{code-cell}
 S4_exponent = S4.exponent

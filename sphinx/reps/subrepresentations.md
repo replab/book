@@ -18,11 +18,11 @@ run ../../external/replab/replab_init.m
 # 5.4 Subrepresentations
 
 Let $V = \mathbb{K}^D$ be the space on which a representation $\rho: G \to \operatorname{GL}(V)$ acts, with $\mathbb{K} = \mathbb{R}$ or $\mathbb{C}$.
-An subspace $W$ of $V$ is invariant under $\rho$ if and only if: for all $\vec{w} \in W$ and $g \in G$, we have $\rho_g \vec{w} \in W$.
+A subspace $W$ of $V$ is invariant under $\rho$ if and only if: for all $\vec{w} \in W$ and $g \in G$, we have $\rho_g \vec{w} \in W$.
 
 ```{sidebar}
-In most representation theory textbooks, including {cite:p}`Serre1977`, the authors assume right at the beginning that all representations are unitary.
-Then, the invariant subspaces are singled out using orthonormal bases.
+In most representation theory textbooks, including {cite:p}`Serre1977`, the authors assume right from the beginning that all representations are unitary.
+Invariant subspaces are then singled out using orthonormal bases.
 The approach we employ in RepLAB is more general as it works with non-unitary (sub)representations.
 Working with non-unitary (sub)representations is particularly important when working in exact arithmetic.
 ```
@@ -39,7 +39,7 @@ injects a vector from the subspace in the larger parent space.
 The projection map is identified with a $d \times D$ matrix such that
 
 $$
-\vec{v} \to \vec{w} = P \cdot \vec{v}.
+\vec{v} \to \vec{w} = P \cdot \vec{v},
 $$
 
 a vector of the parent space is projected into the subspace. The projector on the subspace is given by $\Pi = I \cdot P$.
@@ -54,7 +54,7 @@ In RepLAB, subrepresentations, of type [SubRep](+replab.SubRep) can be construct
 
 * by computing the irreducible decomposition of a representation.
 
-Note that *similar representations*, already seen in the previous section, are a special case of subrepresentations where $D=d$ and the projection and injection maps are bijective.
+Note that [*similar representations*](manipulation.html#change-of-basis) are a special case of subrepresentations where $D=d$ and the projection and injection maps are bijective.
 
 In the examples below, we will work with the three-dimensional natural representation of $S_3$.
 
@@ -81,7 +81,7 @@ In the example above, we see that the projection map was automatically computed:
 trivialSubRep.projection
 ```
 
-This projection map is computed in exact arithmetic, when the injection map is given in exact arithmetic as well.
+When the injection map is given in exact arithmetic as well, the projection map is computed in exact arithmetic as well.
 This can slow down the computations considerably, however.
 
 ```{code-cell}
@@ -158,10 +158,10 @@ errAfter = refined.errorBound
 ## Decomposing a representation (exact)
 
 RepLAB was developed originally to work with approximate decompositions.
-Later on, we added support for exact real and complex character tables.
+Later on, support was added for exact real and complex character tables.
 However, RepLAB is unable to compute those character tables by itself, and relies either on precomputed data or known construction for families of groups.
 
-To decompose a representation, one first needs to verify that the corresponding character table (real or complex), is available.
+To decompose a representation exactly, one first needs to verify that the corresponding character table (real or complex), is available.
 
 ```{code-cell}
 rep.group.realCharacterTable
@@ -185,10 +185,10 @@ P = dec.projection('exact')
 ## Adding a group to the Atlas
 
 If a group is not known in RepLAB, it is possible to add it to the Atlas, using a JSON interoperability format.
+This format includes character tables and allows RepLAB to [recognize](../permgrps/construction.md) the group.
+
 Group data can be exported from [GAP System](https://www.gap-system.org/).
-
 First, one needs to install [GAP System](https://www.gap-system.org/) and set the [gapBinaryPath](+replab.+globals.gapBinaryPath) variable.
-
 Then, one runs the [computeAndAdd](+replab.Atlas.computeAndAdd) method.
 
 ```
