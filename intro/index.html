@@ -113,10 +113,12 @@
             
   <section class="tex2jax_ignore mathjax_ignore" id="introduction">
 <h1>1. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>Group theory is often considered an abstract topic and as a result is seldom used, or even taught, outside strictly theoretical contexts. Yet symmetries are universal and very concrete phenomenons, present in numerous fields.</p>
+<p>By its constructive and interactive nature, RepLAB provides a simple way to modelize groups and representations. It makes it a good tool to learn these topics through exploration without limited prior knowledge.</p>
+<p>The purpose of this book is to introduce the basic ingredients of RepLAB. Ultimately, this book will be usable as an introduction to group theory and representation theory.</p>
 <section id="structure-of-the-book">
 <h2>1.1 Structure of the book<a class="headerlink" href="#structure-of-the-book" title="Permalink to this headline">¶</a></h2>
-<p>TODO</p>
-<p>How is this book structured?</p>
+<p>The book is structured in thematic chapters, which are accessible on the left menu. The first chapters describe groups from various perspectives. First, <a class="reference internal" href="../permgrps/index.html"><span class="doc std std-doc">finite permutation groups</span></a> are presented, followed by <a class="reference internal" href="../absgrps/index.html"><span class="doc std std-doc">abstract groups</span></a>. Then, <a class="reference internal" href="../matgrps/index.html"><span class="doc std std-doc">finite and continuous matrix groups</span></a> are introduced. Finally, the text turns to the fruitful topic of <a class="reference internal" href="../reps/index.html"><span class="doc std std-doc">group representations</span></a>.</p>
 </section>
 <section id="installing-replab">
 <h2>1.2 Installing RepLAB<a class="headerlink" href="#installing-replab" title="Permalink to this headline">¶</a></h2>
@@ -146,9 +148,36 @@ replab_init: Initialization done.
 </section>
 <section id="programming-style">
 <h2>1.3 Programming style<a class="headerlink" href="#programming-style" title="Permalink to this headline">¶</a></h2>
+<p>RepLAB follows an object-oriented architecture. This allows the creation of new group and representations by simple combination of existing objects.</p>
 </section>
 <section id="help-system">
 <h2>1.4 Help system<a class="headerlink" href="#help-system" title="Permalink to this headline">¶</a></h2>
+<p>RepLAB comes with an integrated help system, accessible through the command <code class="docutils literal notranslate"><span class="pre">help</span></code>. Information on any RepLAB object, class and function is accessible in this way:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">help</span> <span class="n">replab</span><span class="p">.</span><span class="n">S</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- help for replab.S ---
+
+ function s = replab.S(domainreplab.Size):
+   Returns the symmetric group acting on a certain domain size
+
+   Alias for replab.PermutationGroup.symmetric
+
+   Args:
+     domainSize (integer): Domain size, must be &gt;= 0
+
+   Returns:
+     replab.PermutationGroup: Symmetric group
+</pre></div>
+</div>
+</div>
+</div>
+<p>This help is fully interactive, allowing for an easy exploration of RepLAB material.</p>
+<p>See also the dedicated <a class="reference external" href="https://replab.github.io/web/blog/20200123-RepLAB-website-live.html">blog post</a> for more details.</p>
 </section>
 </section>
 
