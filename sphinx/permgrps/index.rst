@@ -15,6 +15,7 @@ Here are the available topics on permutation groups on this subject:
 
   permutations
   construction
+  graphs
   properties
   subgroups
   conj
