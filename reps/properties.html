@@ -71,7 +71,7 @@
   &nbsp;
   <a class="website-current" href="https://replab.github.io/book">Book</a>
   &nbsp;
-  <a class="website-part" href="https://replab.github.io/apps">Applis</a>
+  <a class="website-part" href="https://replab.github.io/applis">Applis</a>
   &nbsp;
   <a class="website-part" href="https://replab.github.io/api">API</a>
 </div><div class="sidebar-block">
@@ -181,7 +181,7 @@ Compressed Column Sparse (rows = 3, cols = 3, nnz = 3 [33%])
 </div>
 </div>
 </div>
-<p>The method <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.errorBound" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">errorBound</span></a> provides an estimate of the maximal error of these approximate images.</p>
+<p>The method <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.errorBound" title="(in replab-api v1.0.1)"><span class="xref myst">errorBound</span></a> provides an estimate of the maximal error of these approximate images.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">rep</span><span class="p">.</span><span class="n">errorBound</span>
@@ -197,8 +197,8 @@ Compressed Column Sparse (rows = 3, cols = 3, nnz = 3 [33%])
 </section>
 <section id="exact-images">
 <h2>Exact images<a class="headerlink" href="#exact-images" title="Permalink to this headline">¶</a></h2>
-<p>Some representations can provide exact images of type <a class="reference external" href="https://replab.github.io/api/numerics.html#+replab.cyclotomic" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">cyclotomic</span></a>.
-The method <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.isExact" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">isExact</span></a> returns whether a given representation is able to compute exact images.</p>
+<p>Some representations can provide exact images of type <a class="reference external" href="https://replab.github.io/api/numerics.html#+replab.cyclotomic" title="(in replab-api v1.0.1)"><span class="xref myst">cyclotomic</span></a>.
+The method <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.isExact" title="(in replab-api v1.0.1)"><span class="xref myst">isExact</span></a> returns whether a given representation is able to compute exact images.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">canProvideExactImages</span> <span class="p">=</span> <span class="n">rep</span><span class="p">.</span><span class="n">isExact</span>
@@ -218,7 +218,7 @@ ans =
 </section>
 <section id="unitary-representations">
 <h2>Unitary representations<a class="headerlink" href="#unitary-representations" title="Permalink to this headline">¶</a></h2>
-<p>One can check whether a representation is unitary (i.e. whether <span class="math notranslate nohighlight">\(\rho_g^{-1} = \rho_g^\dagger\)</span>) through the property <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.isUnitary" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">isUnitary</span></a>.
+<p>One can check whether a representation is unitary (i.e. whether <span class="math notranslate nohighlight">\(\rho_g^{-1} = \rho_g^\dagger\)</span>) through the property <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.isUnitary" title="(in replab-api v1.0.1)"><span class="xref myst">isUnitary</span></a>.
 If RepLAB knows a representation is unitary, faster and more robust algorithms can be used.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -251,7 +251,7 @@ If RepLAB knows a representation is unitary, faster and more robust algorithms c
 <section id="kernel">
 <h2>Kernel<a class="headerlink" href="#kernel" title="Permalink to this headline">¶</a></h2>
 <p>The kernel of a representation <span class="math notranslate nohighlight">\(\rho : G \to \operatorname{GL}(\mathbb{K}^D)\)</span> is the subgroup of <span class="math notranslate nohighlight">\(G\)</span> that maps to the identity.
-It can be computed through the method <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.kernel" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">kernel</span></a>.</p>
+It can be computed through the method <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.kernel" title="(in replab-api v1.0.1)"><span class="xref myst">kernel</span></a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">signRep</span> <span class="p">=</span> <span class="n">S3</span><span class="p">.</span><span class="n">signRep</span><span class="p">;</span>
@@ -273,7 +273,7 @@ generator(1 or &#39;x1&#39;): [2, 3, 1]
 </section>
 <section id="irreducibility">
 <h2>Irreducibility<a class="headerlink" href="#irreducibility" title="Permalink to this headline">¶</a></h2>
-<p>An irreducible representation is a representation that has no trivial subrepresentation (see <a class="reference internal" href="subrepresentations.html"><span class="doc std std-doc">dedicated section</span></a>). This property can be checked through the method <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.isIrreducible" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">isIrreducible</span></a>.</p>
+<p>An irreducible representation is a representation that has no trivial subrepresentation (see <a class="reference internal" href="subrepresentations.html"><span class="doc std std-doc">dedicated section</span></a>). This property can be checked through the method <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.isIrreducible" title="(in replab-api v1.0.1)"><span class="xref myst">isIrreducible</span></a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">rep</span><span class="p">.</span><span class="n">isIrreducible</span>
@@ -289,7 +289,7 @@ generator(1 or &#39;x1&#39;): [2, 3, 1]
 </section>
 <section id="frobenius-schur-indicator">
 <h2>Frobenius-Schur indicator<a class="headerlink" href="#frobenius-schur-indicator" title="Permalink to this headline">¶</a></h2>
-<p>For representations over <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, the <a class="reference external" href="https://en.wikipedia.org/wiki/Frobenius%E2%80%93Schur_indicator">Frobenius-Schur indicator</a> indicates the type of irreducible real representation, through the method <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.frobeniusSchurIndicator" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">frobeniusSchurIndicator</span></a>.
+<p>For representations over <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, the <a class="reference external" href="https://en.wikipedia.org/wiki/Frobenius%E2%80%93Schur_indicator">Frobenius-Schur indicator</a> indicates the type of irreducible real representation, through the method <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.frobeniusSchurIndicator" title="(in replab-api v1.0.1)"><span class="xref myst">frobeniusSchurIndicator</span></a>.
 It can be equal to <span class="math notranslate nohighlight">\(1\)</span> (real-type), <span class="math notranslate nohighlight">\(0\)</span> (complex-type representation) or <span class="math notranslate nohighlight">\(-2\)</span> (quaternionic-type).</p>
 <p>Here is an example of a quaternionic-type representation over <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.</p>
 <div class="cell docutils container">

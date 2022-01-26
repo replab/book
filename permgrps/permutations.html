@@ -71,7 +71,7 @@
   &nbsp;
   <a class="website-current" href="https://replab.github.io/book">Book</a>
   &nbsp;
-  <a class="website-part" href="https://replab.github.io/apps">Applis</a>
+  <a class="website-part" href="https://replab.github.io/applis">Applis</a>
   &nbsp;
   <a class="website-part" href="https://replab.github.io/api">API</a>
 </div><div class="sidebar-block">
@@ -176,10 +176,10 @@ k2 = 1
 One should then be careful when mixing different textbooks or computer algebra systems.</p>
 </aside>
 <p>But how can one compute the inverse of a permutation? Luckily, we can construct the group of all permutations of a given size
-in RepLAB, and call its methods to perform group operations. The function <a class="reference external" href="https://replab.github.io/api/named_discrete_groups.html#+replab.S" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">replab.S(n)</span></a> creates the
-symmetric group acting on <span class="math notranslate nohighlight">\(\{1,2,\ldots,n\}\)</span>. The returned object is of type <a class="reference external" href="https://replab.github.io/api/permutation_groups.html#+replab.PermutationGroup" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">replab.PermutationGroup</span></a>
-and it proposes notably the <a class="reference external" href="https://replab.github.io/api/permutation_groups.html#+replab.PermutationGroup.identity" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">identity</span></a>, <a class="reference external" href="https://replab.github.io/api/permutation_groups.html#+replab.PermutationGroup.compose" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">compose</span></a> and
-<a class="reference external" href="https://replab.github.io/api/permutation_groups.html#+replab.PermutationGroup.inverse" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">inverse</span></a> methods:</p>
+in RepLAB, and call its methods to perform group operations. The function <a class="reference external" href="https://replab.github.io/api/named_discrete_groups.html#+replab.S" title="(in replab-api v1.0.1)"><span class="xref myst">replab.S(n)</span></a> creates the
+symmetric group acting on <span class="math notranslate nohighlight">\(\{1,2,\ldots,n\}\)</span>. The returned object is of type <a class="reference external" href="https://replab.github.io/api/permutation_groups.html#+replab.PermutationGroup" title="(in replab-api v1.0.1)"><span class="xref myst">replab.PermutationGroup</span></a>
+and it proposes notably the <a class="reference external" href="https://replab.github.io/api/permutation_groups.html#+replab.PermutationGroup.identity" title="(in replab-api v1.0.1)"><span class="xref myst">identity</span></a>, <a class="reference external" href="https://replab.github.io/api/permutation_groups.html#+replab.PermutationGroup.compose" title="(in replab-api v1.0.1)"><span class="xref myst">compose</span></a> and
+<a class="reference external" href="https://replab.github.io/api/permutation_groups.html#+replab.PermutationGroup.inverse" title="(in replab-api v1.0.1)"><span class="xref myst">inverse</span></a> methods:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">S</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>

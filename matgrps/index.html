@@ -70,7 +70,7 @@
   &nbsp;
   <a class="website-current" href="https://replab.github.io/book">Book</a>
   &nbsp;
-  <a class="website-part" href="https://replab.github.io/apps">Applis</a>
+  <a class="website-part" href="https://replab.github.io/applis">Applis</a>
   &nbsp;
   <a class="website-part" href="https://replab.github.io/api">API</a>
 </div><div class="sidebar-block">
@@ -115,24 +115,24 @@
 <span id="id1"></span><h1>4. Matrix and continuous groups<a class="headerlink" href="#matrix-and-continuous-groups" title="Permalink to this headline">¶</a></h1>
 <aside class="sidebar">
 <p>RepLAB’s algorithms <span id="id2">[<a class="reference internal" href="../bibliography.html#id3" title="Denis Rosset, Felipe Montealegre-Mora, and Jean-Daniel Bancal. RepLAB: A Computational/Numerical Approach to Representation Theory. In M. B. Paranjape, Richard MacKenzie, Zora Thomova, Pavel Winternitz, and William Witczak-Krempa, editors, Quantum Theory and Symmetries, CRM Series in Mathematical Physics, 643–653. Cham, 2021. Springer International Publishing. doi:10.1007/978-3-030-55777-5_60.">RMontealegreMoraB21</a>]</span> handle any compact group, given an oracle that samples from the Haar measure.
-One then simply subclasses <a class="reference external" href="https://replab.github.io/api/groups.html#+replab.CompactGroup" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">CompactGroup</span></a>.
+One then simply subclasses <a class="reference external" href="https://replab.github.io/api/groups.html#+replab.CompactGroup" title="(in replab-api v1.0.1)"><span class="xref myst">CompactGroup</span></a>.
 However, it is easier to work with the primitives RepLAB already provides.</p>
 </aside>
 <p>We now move to symmetries of the Euclidean space, including continuous symmetries.
 RepLAB provide two types of matrix groups.</p>
 <ul class="simple">
-<li><p>Finite matrix groups are described by <a class="reference external" href="https://replab.github.io/api/finite_groups.html#+replab.MatrixGroup" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">MatrixGroup</span></a>, and their coefficients must belong to the <a class="reference external" href="https://en.wikipedia.org/wiki/Cyclotomic_field">field of cyclotomics</a>. Matrix group elements are
-cyclotomic matrices of type <a class="reference external" href="https://replab.github.io/api/numerics.html#+replab.cyclotomic" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">cyclotomic</span></a>. RepLAB provides an implementation of exact arithmetic
+<li><p>Finite matrix groups are described by <a class="reference external" href="https://replab.github.io/api/finite_groups.html#+replab.MatrixGroup" title="(in replab-api v1.0.1)"><span class="xref myst">MatrixGroup</span></a>, and their coefficients must belong to the <a class="reference external" href="https://en.wikipedia.org/wiki/Cyclotomic_field">field of cyclotomics</a>. Matrix group elements are
+cyclotomic matrices of type <a class="reference external" href="https://replab.github.io/api/numerics.html#+replab.cyclotomic" title="(in replab-api v1.0.1)"><span class="xref myst">cyclotomic</span></a>. RepLAB provides an implementation of exact arithmetic
 in the field of cyclotomics using a Java library.</p></li>
-<li><p>Classical compact Lie groups are provided by <a class="reference external" href="https://replab.github.io/api/continuous_groups.html#+replab.ClassicalCompactGroup" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">ClassicalCompactGroup</span></a>. Their elements
+<li><p>Classical compact Lie groups are provided by <a class="reference external" href="https://replab.github.io/api/continuous_groups.html#+replab.ClassicalCompactGroup" title="(in replab-api v1.0.1)"><span class="xref myst">ClassicalCompactGroup</span></a>. Their elements
 are matrices with floating-point coefficients, and thus all the operations on those group elements are approximate.</p></li>
 </ul>
 <section id="finite-exact-matrix-groups">
 <span id="id3"></span><h2>Finite, exact, matrix groups<a class="headerlink" href="#finite-exact-matrix-groups" title="Permalink to this headline">¶</a></h2>
 <p>Here, we define a finite matrix group with two generators. The first one is a permutation matrix, and can thus be
 represented exactly using floating-point numbers (i.e, the standard MATLAB/Octave notation).
-The second, however, cannot, and needs to be constructed as an exact <a class="reference external" href="https://replab.github.io/api/numerics.html#+replab.cyclotomic" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">cyclotomic</span></a> matrix. Note that
-the argument to <a class="reference external" href="https://replab.github.io/api/numerics.html#+replab.cyclotomic" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">cyclotomic</span></a> is given as a string, and it is parsed inside RepLAB.</p>
+The second, however, cannot, and needs to be constructed as an exact <a class="reference external" href="https://replab.github.io/api/numerics.html#+replab.cyclotomic" title="(in replab-api v1.0.1)"><span class="xref myst">cyclotomic</span></a> matrix. Note that
+the argument to <a class="reference external" href="https://replab.github.io/api/numerics.html#+replab.cyclotomic" title="(in replab-api v1.0.1)"><span class="xref myst">cyclotomic</span></a> is given as a string, and it is parsed inside RepLAB.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">M1</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">1</span><span class="p">;</span> <span class="mi">1</span> <span class="mi">0</span><span class="p">];</span>
@@ -180,10 +180,10 @@ implemented using brute-force enumeration algorithms, and are limited to group o
 <span id="id4"></span><h2>Continuous groups<a class="headerlink" href="#continuous-groups" title="Permalink to this headline">¶</a></h2>
 <p>The following continuous groups are available in RepLAB.</p>
 <ul class="simple">
-<li><p>Over real <span class="math notranslate nohighlight">\(n \times n\)</span> matrices, the orthogonal group <a class="reference external" href="https://replab.github.io/api/continuous_groups.html#+replab.O" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">O(n)</span></a> and the special orthogonal <a class="reference external" href="https://replab.github.io/api/continuous_groups.html#+replab.SO" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">SO(n)</span></a> group.</p></li>
-<li><p>Over complex <span class="math notranslate nohighlight">\(n \times n\)</span> matrices, the unitary group <a class="reference external" href="https://replab.github.io/api/continuous_groups.html#+replab.U" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">U(n)</span></a> and the special unitary <a class="reference external" href="https://replab.github.io/api/continuous_groups.html#+replab.SU" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">SU(n)</span></a> group.</p></li>
-<li><p>Over quaternionic <span class="math notranslate nohighlight">\(n \times n\)</span> matrices, the compact symplectic group <a class="reference external" href="https://replab.github.io/api/continuous_groups.html#+replab.Sp" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">Sp(n)</span></a>. Its elements are quaternionic matrices
-of type <a class="reference external" href="https://replab.github.io/api/numerics.html#+replab.H" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">replab.H</span></a>. But usually, one works with an encoding of its elements over the complex numbers.</p></li>
+<li><p>Over real <span class="math notranslate nohighlight">\(n \times n\)</span> matrices, the orthogonal group <a class="reference external" href="https://replab.github.io/api/continuous_groups.html#+replab.O" title="(in replab-api v1.0.1)"><span class="xref myst">O(n)</span></a> and the special orthogonal <a class="reference external" href="https://replab.github.io/api/continuous_groups.html#+replab.SO" title="(in replab-api v1.0.1)"><span class="xref myst">SO(n)</span></a> group.</p></li>
+<li><p>Over complex <span class="math notranslate nohighlight">\(n \times n\)</span> matrices, the unitary group <a class="reference external" href="https://replab.github.io/api/continuous_groups.html#+replab.U" title="(in replab-api v1.0.1)"><span class="xref myst">U(n)</span></a> and the special unitary <a class="reference external" href="https://replab.github.io/api/continuous_groups.html#+replab.SU" title="(in replab-api v1.0.1)"><span class="xref myst">SU(n)</span></a> group.</p></li>
+<li><p>Over quaternionic <span class="math notranslate nohighlight">\(n \times n\)</span> matrices, the compact symplectic group <a class="reference external" href="https://replab.github.io/api/continuous_groups.html#+replab.Sp" title="(in replab-api v1.0.1)"><span class="xref myst">Sp(n)</span></a>. Its elements are quaternionic matrices
+of type <a class="reference external" href="https://replab.github.io/api/numerics.html#+replab.H" title="(in replab-api v1.0.1)"><span class="xref myst">replab.H</span></a>. But usually, one works with an encoding of its elements over the complex numbers.</p></li>
 </ul>
 <p>By themselves, those groups provide one useful operation: sampling from their Haar measure.</p>
 <p>For the (special) orthogonal group:</p>
@@ -200,17 +200,17 @@ of type <a class="reference external" href="https://replab.github.io/api/numeric
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sample_O3 =
 
-   0.1664   0.7207   0.6730
-  -0.3104  -0.6096   0.7294
-  -0.9359   0.3303  -0.1223
+  -0.662596  -0.748145   0.035286
+   0.109632  -0.143485  -0.983561
+   0.740910  -0.647836   0.177093
 
 sample_SO3 =
 
-  -0.088468  -0.665129   0.741470
-   0.198156   0.717758   0.667501
-  -0.976170   0.205979   0.068300
+   0.8906   0.4331  -0.1387
+  -0.3056   0.7960   0.5225
+   0.3367  -0.4230   0.8413
 
-det_SO3 = 1
+det_SO3 = 1.0000
 </pre></div>
 </div>
 </div>
@@ -230,16 +230,16 @@ det_SO3 = 1
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sample_U2 =
 
-  -0.6648 - 0.3798i  -0.0038 - 0.6432i
-   0.0667 - 0.6398i  -0.6988 + 0.3130i
+   0.1039 + 0.9735i   0.0940 + 0.1807i
+   0.1344 - 0.1530i  -0.3334 + 0.9205i
 
 sample_SU2 =
 
-   0.0201 + 0.4155i  -0.2449 - 0.8757i
-   0.2449 - 0.8757i   0.0201 - 0.4155i
+   0.5174 + 0.7178i  -0.4656 + 0.0160i
+   0.4656 + 0.0160i   0.5174 - 0.7178i
 
-det_U2 =  0.995201 + 0.097849i
-det_SU2 = 1
+det_U2 = -0.9711 - 0.2388i
+det_SU2 =  1.0000e+00 - 5.5511e-17i
 </pre></div>
 </div>
 </div>
@@ -255,8 +255,8 @@ det_SU2 = 1
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sample_Sp2 =
 
-  0.030724 + 0.23571i + 0.013938j +...  0.63119 - 0.42562i - 0.53227j + 0...  
-  0.44963 + 0.77011i - 0.041329j - ...  -0.22343 + 0.15463i - 0.1819j - 0...  
+  0.11756 + 0.70518i + 0.045256j - ...  -0.27846 + 0.27367i + 0.0047567j ...  
+  -0.13089 - 0.27963i - 0.6226j + 0...  -0.63939 + 0.2274i + 0.23656j + 0...  
 </pre></div>
 </div>
 </div>

@@ -71,7 +71,7 @@
   &nbsp;
   <a class="website-current" href="https://replab.github.io/book">Book</a>
   &nbsp;
-  <a class="website-part" href="https://replab.github.io/apps">Applis</a>
+  <a class="website-part" href="https://replab.github.io/applis">Applis</a>
   &nbsp;
   <a class="website-part" href="https://replab.github.io/api">API</a>
 </div><div class="sidebar-block">
@@ -128,7 +128,7 @@
 <section id="trivial-representation">
 <h2>Trivial representation<a class="headerlink" href="#trivial-representation" title="Permalink to this headline">¶</a></h2>
 <p>The trivial representation maps all group elements to the identity matrix.
-It can be constructed for any compact group using the <a class="reference external" href="https://replab.github.io/api/groups.html#+replab.CompactGroup.trivialRep" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">trivialRep</span></a> method.
+It can be constructed for any compact group using the <a class="reference external" href="https://replab.github.io/api/groups.html#+replab.CompactGroup.trivialRep" title="(in replab-api v1.0.1)"><span class="xref myst">trivialRep</span></a> method.
 One picks the field (<code class="docutils literal notranslate"><span class="pre">'R'</span></code> or <code class="docutils literal notranslate"><span class="pre">'C'</span></code>) and the dimension.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -187,7 +187,7 @@ ans = 1
 If the images have integer entries, it is sufficient to provide standard MATLAB/Octave floating-point matrices.
 Beyond that, RepLAB supports images in the cyclotomic field, and those need to be encoded in a particular way
 (we do not support the Symbolic Toolbox of either MATLAB or Octave).</p>
-<p>The simplest is to provide images as <a class="reference external" href="https://replab.github.io/api/numerics.html#+replab.cyclotomic" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">cyclotomic</span></a> matrices constructed from a string, taking care to separate the columns with commas.</p>
+<p>The simplest is to provide images as <a class="reference external" href="https://replab.github.io/api/numerics.html#+replab.cyclotomic" title="(in replab-api v1.0.1)"><span class="xref myst">cyclotomic</span></a> matrices constructed from a string, taking care to separate the columns with commas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">S3</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">S</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
@@ -276,13 +276,13 @@ While there are two choices on how to encode a permutation as a permutation matr
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>g =
 
-   0.0023 + 0.4699i  -0.3462 + 0.8120i
-  -0.4654 + 0.7500i   0.3859 - 0.2682i
+   0.6632 + 0.7012i   0.1530 + 0.2122i
+   0.2144 + 0.1499i  -0.7109 - 0.6528i
 
 img =
 
-   0.0023 + 0.4699i  -0.3462 + 0.8120i
-  -0.4654 + 0.7500i   0.3859 - 0.2682i
+   0.6632 + 0.7012i   0.1530 + 0.2122i
+   0.2144 + 0.1499i  -0.7109 - 0.6528i
 </pre></div>
 </div>
 </div>

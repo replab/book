@@ -71,7 +71,7 @@
   &nbsp;
   <a class="website-current" href="https://replab.github.io/book">Book</a>
   &nbsp;
-  <a class="website-part" href="https://replab.github.io/apps">Applis</a>
+  <a class="website-part" href="https://replab.github.io/applis">Applis</a>
   &nbsp;
   <a class="website-part" href="https://replab.github.io/api">API</a>
 </div><div class="sidebar-block">
@@ -150,7 +150,7 @@ The projection map is identified with a <span class="math notranslate nohighligh
 \vec{v} \to \vec{w} = P \cdot \vec{v},
 \]</div>
 <p>a vector of the parent space is projected into the subspace. The projector on the subspace is given by <span class="math notranslate nohighlight">\(\Pi = I \cdot P\)</span>.</p>
-<p>In RepLAB, subrepresentations, of type <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.SubRep" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">SubRep</span></a> can be constructed in several ways:</p>
+<p>In RepLAB, subrepresentations, of type <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.SubRep" title="(in replab-api v1.0.1)"><span class="xref myst">SubRep</span></a> can be constructed in several ways:</p>
 <ul class="simple">
 <li><p>by providing the parent representation and the injection map,</p></li>
 <li><p>by computing the complement subrepresentation of a subrepresentation,</p></li>
@@ -184,7 +184,7 @@ preimages{2}: [2, 1, 3]
 </div>
 <section id="explicit-subrepresentations">
 <h2>Explicit subrepresentations<a class="headerlink" href="#explicit-subrepresentations" title="Permalink to this headline">¶</a></h2>
-<p>A subrepresentation can be explicitly constructed using the <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.subRep" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">subRep</span></a> method.
+<p>A subrepresentation can be explicitly constructed using the <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.subRep" title="(in replab-api v1.0.1)"><span class="xref myst">subRep</span></a> method.
 Given the natural representation of <span class="math notranslate nohighlight">\(S_3\)</span>, one can compute the trivial subrepresentation corresponding to the subspace spanned by the vector <span class="math notranslate nohighlight">\(I = (1,1,1)^\top\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -207,7 +207,7 @@ basis(1,&#39;exact&#39;): [1; 1; 1]
 </div>
 </div>
 </div>
-<p>The injection and projection maps are available through the <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.SubRep.injection" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">injection</span></a> and <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.SubRep.projection" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">projection</span></a> methods.</p>
+<p>The injection and projection maps are available through the <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.SubRep.injection" title="(in replab-api v1.0.1)"><span class="xref myst">injection</span></a> and <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.SubRep.projection" title="(in replab-api v1.0.1)"><span class="xref myst">projection</span></a> methods.</p>
 <p>In the example above, we see that the projection map was automatically computed:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -263,7 +263,7 @@ ans =
 <section id="complement-subrepresentation">
 <h2>Complement subrepresentation<a class="headerlink" href="#complement-subrepresentation" title="Permalink to this headline">¶</a></h2>
 <p>Given a subrepresentation, one can compute the complement. Here, the trivial subrepresentation has dimension <span class="math notranslate nohighlight">\(d=1\)</span>, the parent representation has dimension <span class="math notranslate nohighlight">\(D=3\)</span>, so the complement has dimension <span class="math notranslate nohighlight">\(D-d = 2\)</span>.</p>
-<p>The method name is <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.maschke" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">maschke</span></a> as it uses <a class="reference external" href="https://en.wikipedia.org/wiki/Maschke%27s_theorem">Maschke’s theorem</a> as a theoretical basis.</p>
+<p>The method name is <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.maschke" title="(in replab-api v1.0.1)"><span class="xref myst">maschke</span></a> as it uses <a class="reference external" href="https://en.wikipedia.org/wiki/Maschke%27s_theorem">Maschke’s theorem</a> as a theoretical basis.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">standardRep</span> <span class="p">=</span> <span class="n">rep</span><span class="p">.</span><span class="n">maschke</span><span class="p">(</span><span class="n">trivialSubRep</span><span class="p">)</span>
@@ -288,7 +288,7 @@ basis(2,&#39;double&#39;): [1.4073e-16; 0.70711; -0.70711]
 </section>
 <section id="splitting-a-representation">
 <h2>Splitting a representation<a class="headerlink" href="#splitting-a-representation" title="Permalink to this headline">¶</a></h2>
-<p>The <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.split" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">split</span></a> method enumerate all irreducible subrepresentations, without doing further processing.</p>
+<p>The <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.split" title="(in replab-api v1.0.1)"><span class="xref myst">split</span></a> method enumerate all irreducible subrepresentations, without doing further processing.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">rep</span><span class="p">.</span><span class="n">split</span>
@@ -341,7 +341,7 @@ basis(2,&#39;double&#39;): [1.4073e-16; 0.70711; -0.70711]
 It can handle representations of dimension <span class="math notranslate nohighlight">\(&gt; 10000\)</span>. For some groups and representations, it is able to exploit
 the mathematical structure for optimization purposes.</p>
 </aside>
-<p>More powerful than the <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.split" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">split</span></a> method, the <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.decomposition" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">decomposition</span></a> method computes a decomposition of a representation into isotypic components, identifying equivalent irreducible representations present.
+<p>More powerful than the <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.split" title="(in replab-api v1.0.1)"><span class="xref myst">split</span></a> method, the <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.decomposition" title="(in replab-api v1.0.1)"><span class="xref myst">decomposition</span></a> method computes a decomposition of a representation into isotypic components, identifying equivalent irreducible representations present.
 The corresponding theory is discussed in Section 2.7 of <span id="id2">[<a class="reference internal" href="../bibliography.html#id4" title="Jean-Pierre Serre. Linear Representations of Finite Groups. Graduate Texts in Mathematics. Springer, 1977.">Ser77</a>]</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -359,15 +359,15 @@ Orthogonal reducible representation
         isUnitary: true
            parent: Orthogonal reducible representation
 basis(1,&#39;double&#39;): [0.57735; 0.57735; 0.57735]
-basis(2,&#39;double&#39;): [-0.81069; 0.32117; 0.48952]
-basis(3,&#39;double&#39;): [0.097193; -0.75068; 0.65348]
+basis(2,&#39;double&#39;): [0.8165; -0.40825; -0.40825]
+basis(3,&#39;double&#39;): [1.4073e-16; 0.70711; -0.70711]
      component(1): Isotypic component R(1) (trivial)
      component(2): Isotypic component R(2) (nontrivial)
 </pre></div>
 </div>
 </div>
 </div>
-<p>The returned object is of type <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Irreducible" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">Irreducible</span></a>, and it contains isotypic <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Irreducible.components" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">components</span></a> of type <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Isotypic" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">Isotypic</span></a>.
+<p>The returned object is of type <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Irreducible" title="(in replab-api v1.0.1)"><span class="xref myst">Irreducible</span></a>, and it contains isotypic <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Irreducible.components" title="(in replab-api v1.0.1)"><span class="xref myst">components</span></a> of type <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Isotypic" title="(in replab-api v1.0.1)"><span class="xref myst">Isotypic</span></a>.
 However, all these objects are subrepresentations in themselves, so the projection/injection methods can be called.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -387,9 +387,9 @@ However, all these objects are subrepresentations in themselves, so the projecti
 
 inj2 =
 
-  -0.810691   0.097193
-   0.321174  -0.750676
-   0.489518   0.653482
+   8.1650e-01   1.4073e-16
+  -4.0825e-01   7.0711e-01
+  -4.0825e-01  -7.0711e-01
 </pre></div>
 </div>
 </div>
@@ -473,8 +473,8 @@ However, RepLAB is unable to compute those character tables by itself, and relie
 </div>
 </div>
 </div>
-<p>Note that for some groups, only the complex character table is known; in those case, one can <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.complexification" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">complexify</span></a> a real representation before decomposing it.</p>
-<p>The method call is <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.decomposition" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">decomposition</span></a> with an extra parameter:</p>
+<p>Note that for some groups, only the complex character table is known; in those case, one can <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.complexification" title="(in replab-api v1.0.1)"><span class="xref myst">complexify</span></a> a real representation before decomposing it.</p>
+<p>The method call is <a class="reference external" href="https://replab.github.io/api/rep.html#+replab.Rep.decomposition" title="(in replab-api v1.0.1)"><span class="xref myst">decomposition</span></a> with an extra parameter:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">dec</span> <span class="p">=</span> <span class="n">rep</span><span class="p">.</span><span class="n">decomposition</span><span class="p">(</span><span class="s">&#39;exact&#39;</span><span class="p">)</span>
@@ -492,7 +492,7 @@ Orthogonal reducible representation
           parent: Orthogonal reducible representation
 basis(1,&#39;exact&#39;): [1/3; 1/3; 1/3]
 basis(2,&#39;exact&#39;): [1/6; -1/3; 1/6]
-basis(3,&#39;exact&#39;): [sqrt(3)/6; 0; -sqrt(3)/6]
+basis(3,&#39;exact&#39;): [-sqrt(3)/6; 0; sqrt(3)/6]
     component(1): Isotypic component R(1) (trivial)
     component(2): Isotypic component 0 x R(1) (nontrivial)
     component(3): Isotypic component R(2) (nontrivial)
@@ -510,13 +510,13 @@ basis(3,&#39;exact&#39;): [sqrt(3)/6; 0; -sqrt(3)/6]
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =
-  1/3   1/6   sqrt(3)/6  
-  1/3  -1/3       0      
   1/3   1/6  -sqrt(3)/6  
+  1/3  -1/3       0      
+  1/3   1/6   sqrt(3)/6  
 ans =
-     1      1      1     
-     1     -2      1     
-  sqrt(3)   0  -sqrt(3)  
+      1      1     1     
+      1     -2     1     
+  -sqrt(3)   0  sqrt(3)  
 </pre></div>
 </div>
 </div>
@@ -527,8 +527,8 @@ ans =
 <p>If a group is not known in RepLAB, it is possible to add it to the Atlas, using a JSON interoperability format.
 This format includes character tables and allows RepLAB to <a class="reference internal" href="../permgrps/construction.html"><span class="doc std std-doc">recognize</span></a> the group.</p>
 <p>Group data can be exported from <a class="reference external" href="https://www.gap-system.org/">GAP System</a>.
-First, one needs to install <a class="reference external" href="https://www.gap-system.org/">GAP System</a> and set the <a class="reference external" href="https://replab.github.io/api/globals.html#+replab.+globals.gapBinaryPath" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">gapBinaryPath</span></a> variable.
-Then, one runs the <a class="reference external" href="https://replab.github.io/api/abstract_groups.html#+replab.Atlas.computeAndAdd" title="(in replab-api v1.0.1-SNAP)"><span class="xref myst">computeAndAdd</span></a> method.</p>
+First, one needs to install <a class="reference external" href="https://www.gap-system.org/">GAP System</a> and set the <a class="reference external" href="https://replab.github.io/api/globals.html#+replab.+globals.gapBinaryPath" title="(in replab-api v1.0.1)"><span class="xref myst">gapBinaryPath</span></a> variable.
+Then, one runs the <a class="reference external" href="https://replab.github.io/api/abstract_groups.html#+replab.Atlas.computeAndAdd" title="(in replab-api v1.0.1)"><span class="xref myst">computeAndAdd</span></a> method.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">replab</span><span class="o">.</span><span class="n">PermutationGroup</span><span class="o">.</span><span class="n">of</span><span class="p">([</span><span class="mi">2</span> <span class="mi">3</span> <span class="mi">1</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span> <span class="mi">1</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">5</span> <span class="mi">4</span><span class="p">]);</span>
 <span class="n">replab</span><span class="o">.</span><span class="n">Atlas</span><span class="o">.</span><span class="n">computeAndAdd</span><span class="p">(</span><span class="n">G</span><span class="p">);</span>
 </pre></div>
